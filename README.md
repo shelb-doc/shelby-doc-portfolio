@@ -34,9 +34,8 @@ The portfolio embraces a dreamy, professional aesthetic inspired by nighttime se
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: **[https://YOUR-USERNAME.github.io/portfolio/](https://YOUR-USERNAME.github.io/portfolio/)**
+Visit the live portfolio: **[https://shelb-doc.github.io/shelby-doc-portfolio/](https://shelb-doc.github.io/shelby-doc-portfolio/)**
 
-*(Replace YOUR-USERNAME with your GitHub username)*
 
 ## 📂 Project Structure
 
@@ -44,7 +43,6 @@ Visit the live portfolio: **[https://YOUR-USERNAME.github.io/portfolio/](https:/
 portfolio/
 ├── index.html              # Main portfolio file
 ├── README.md              # This file
-└── DEPLOYMENT_GUIDE.md    # Detailed deployment instructions
 ```
 
 ## 🎯 Highlights
