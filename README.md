@@ -27,6 +27,8 @@ A modern, interactive portfolio website showcasing my experience and skills as a
 - **JavaScript** - Interactive elements and Web Audio API
 - **Google Fonts** - Urbanist & JetBrains Mono
 - **SVG** - Custom rubber duck illustration
+- **Jest** - Unit testing framework
+- **GitHub Actions** - CI/CD pipeline automation
 
 ## 🎨 Design Philosophy
 
@@ -41,9 +43,68 @@ Visit the live portfolio: **[https://shelb-doc.github.io/shelby-doc-portfolio/](
 
 ```
 portfolio/
+├── .github/
+│   └── workflows/
+│       └── ci.yml          # GitHub Actions workflow
+├── __tests__/
+│   ├── navigation.test.js  # Navigation tests
+│   ├── animations.test.js  # Animation and observer tests
+│   └── duck.test.js        # Easter egg tests
 ├── index.html              # Main portfolio file
-├── README.md              # This file
+├── package.json            # Node.js dependencies
+├── jest.config.js          # Jest configuration
+├── jest.setup.js           # Test setup file
+├── .editorconfig           # Editor configuration
+├── .eslintrc.json          # ESLint configuration
+├── .gitignore              # Git ignore rules
+├── CONTRIBUTING.md         # Contribution guidelines
+├── LICENSE                 # MIT License
+└── README.md               # This file
 ```
+
+## 🧪 Testing
+
+This portfolio includes comprehensive unit tests to ensure quality and functionality.
+
+### Running Tests
+
+```bash
+# Install dependencies
+npm install
+
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Generate coverage report
+npm test -- --coverage
+```
+
+### Test Coverage
+
+The test suite covers:
+
+- ✅ Navigation functionality and smooth scrolling
+- ✅ IntersectionObserver animations
+- ✅ Scroll event handling
+- ✅ Rubber duck Easter egg interactions
+- ✅ Audio API integration
+- ✅ DOM element verification
+- ✅ CSS animation definitions
+
+### CI/CD Pipeline
+
+The project uses GitHub Actions for continuous integration:
+
+- **Automated Testing**: Runs on every push and pull request
+- **Multi-Node Testing**: Tests against Node.js 18.x and 20.x
+- **Code Coverage**: Uploads coverage reports to Codecov
+- **Linting**: Validates HTML structure
+- **Lighthouse Audit**: Performance and accessibility checks
+- **Security Scanning**: Dependency vulnerability checks
+- **Auto-Deployment**: Deploys to GitHub Pages on main branch
 
 ## 🎯 Highlights
 
@@ -63,9 +124,13 @@ portfolio/
 
 ## 🤝 Contributing
 
-This is a personal portfolio, but feel free to:
-- Report issues
-- Suggest improvements
+This is a personal portfolio, but contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+Ways to contribute:
+
+- Report issues or bugs
+- Suggest improvements or features
+- Submit pull requests
 - Fork for your own use (please provide attribution)
 
 ## 📄 License
