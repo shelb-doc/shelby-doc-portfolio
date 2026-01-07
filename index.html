@@ -516,8 +516,21 @@
     </section>
 
     <!-- Rubber Duck Easter Egg -->
-    <div id="rubberDuck" style="position: fixed; bottom: 2rem; right: 2rem; font-size: 3rem; cursor: pointer; z-index: 9999; transition: all 0.3s ease; filter: drop-shadow(0 4px 8px rgba(155, 122, 184, 0.4));" title="Click me for debugging wisdom!">
-        🦆
+    <div id="rubberDuck" style="position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; cursor: pointer; z-index: 9999; transition: all 0.3s ease; filter: drop-shadow(0 4px 8px rgba(155, 122, 184, 0.4));" title="Click me for debugging wisdom!">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Duck body -->
+            <ellipse cx="50" cy="65" rx="35" ry="30" fill="#FFD700"/>
+            <!-- Duck head -->
+            <circle cx="45" cy="35" r="20" fill="#FFD700"/>
+            <!-- Duck beak -->
+            <ellipse cx="58" cy="35" rx="12" ry="8" fill="#FF8C00"/>
+            <!-- Duck eye -->
+            <circle cx="42" cy="30" r="3" fill="#000"/>
+            <!-- Duck wing -->
+            <path d="M 60 60 Q 75 65 70 75 Q 65 70 60 70 Z" fill="#FFA500"/>
+            <!-- Purple accent -->
+            <ellipse cx="50" cy="65" rx="25" ry="20" fill="none" stroke="#9b7ab8" stroke-width="2" opacity="0.3"/>
+        </svg>
     </div>
 
     <!-- Footer -->
