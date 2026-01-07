@@ -74,15 +74,16 @@ jobs:
       run: |
         echo "Build step - portfolio is static HTML"
         echo "Validating HTML structure..."
+        echo "Preparing deployment from src/ directory"
 
     - name: Deploy to GitHub Pages
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
+        publish_dir: ./src
         publish_branch: gh-pages
-        exclude_assets: '.github,node_modules,__tests__,coverage,.git'
+        exclude_assets: ''
 
   lighthouse:
     name: Lighthouse Performance Audit

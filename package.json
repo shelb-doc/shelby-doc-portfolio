@@ -5,8 +5,8 @@
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "lint": "eslint *.html",
-    "serve": "http-server -p 8080"
+    "lint": "eslint src/**/*.html",
+    "serve": "http-server src -p 8080"
   },
   "keywords": [
     "portfolio",
