@@ -14,7 +14,7 @@ describe('Scroll Animations and Observers', () => {
   beforeEach(() => {
     // Load the HTML file
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../index.html'),
+      path.resolve(__dirname, '../src/index.html'),
       'utf8'
     );
     document.body.innerHTML = html;
@@ -116,7 +116,7 @@ describe('Scroll Animations and Observers', () => {
 
   test('hero animations are defined in CSS', () => {
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../index.html'),
+      path.resolve(__dirname, '../src/index.html'),
       'utf8'
     );
 

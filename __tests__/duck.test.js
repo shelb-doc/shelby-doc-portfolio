@@ -13,7 +13,7 @@ describe('Rubber Duck Easter Egg', () => {
   beforeEach(() => {
     // Load the HTML file
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../index.html'),
+      path.resolve(__dirname, '../src/index.html'),
       'utf8'
     );
     document.body.innerHTML = html;
@@ -129,7 +129,7 @@ describe('Rubber Duck Easter Egg', () => {
 
   test('duck animations are defined in CSS', () => {
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../index.html'),
+      path.resolve(__dirname, '../src/index.html'),
       'utf8'
     );
 

@@ -12,7 +12,7 @@ describe('Navigation Functionality', () => {
   beforeEach(() => {
     // Load the HTML file
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../index.html'),
+      path.resolve(__dirname, '../src/index.html'),
       'utf8'
     );
     document.body.innerHTML = html;

@@ -38,28 +38,40 @@ The portfolio embraces a dreamy, professional aesthetic inspired by nighttime se
 
 Visit the live portfolio: **[https://shelb-doc.github.io/shelby-doc-portfolio/](https://shelb-doc.github.io/shelby-doc-portfolio/)**
 
-
 ## 📂 Project Structure
 
-```
+```text
 portfolio/
 ├── .github/
 │   └── workflows/
-│       └── ci.yml          # GitHub Actions workflow
+│       └── ci.yml              # GitHub Actions CI/CD pipeline
 ├── __tests__/
-│   ├── navigation.test.js  # Navigation tests
-│   ├── animations.test.js  # Animation and observer tests
-│   └── duck.test.js        # Easter egg tests
-├── index.html              # Main portfolio file
-├── package.json            # Node.js dependencies
-├── jest.config.js          # Jest configuration
-├── jest.setup.js           # Test setup file
-├── .editorconfig           # Editor configuration
-├── .eslintrc.json          # ESLint configuration
-├── .gitignore              # Git ignore rules
-├── CONTRIBUTING.md         # Contribution guidelines
-├── LICENSE                 # MIT License
-└── README.md               # This file
+│   ├── navigation.test.js      # Navigation tests
+│   ├── animations.test.js      # Animation and observer tests
+│   └── duck.test.js            # Easter egg tests
+├── src/
+│   ├── index.html              # Main HTML file
+│   ├── css/
+│   │   └── styles.css          # All styles and animations
+│   └── js/
+│       ├── navigation.js       # Navigation and smooth scrolling
+│       ├── animations.js       # IntersectionObserver animations
+│       └── duck.js             # Rubber duck Easter egg
+├── docs/
+│   └── test-strategy.md        # Testing strategy documentation
+├── scripts/
+│   └── run-tests.sh            # Test runner script
+├── .editorconfig               # Editor configuration
+├── .eslintrc.json              # ESLint configuration
+├── .gitignore                  # Git ignore rules
+├── .nvmrc                      # Node.js version
+├── jest.config.js              # Jest test configuration
+├── jest.setup.js               # Test environment setup
+├── package.json                # Dependencies and npm scripts
+├── CONTRIBUTING.md             # Contribution guidelines
+├── QUICKSTART.md               # Quick start guide
+├── LICENSE                     # MIT License
+└── README.md                   # This file
 ```
 
 ## 🧪 Testing
@@ -67,6 +79,8 @@ portfolio/
 This portfolio includes comprehensive unit tests to ensure quality and functionality.
 
 ### Running Tests
+
+#### Using npm scripts
 
 ```bash
 # Install dependencies
@@ -80,6 +94,33 @@ npm run test:watch
 
 # Generate coverage report
 npm test -- --coverage
+```
+
+#### Using the test runner script
+
+The project includes a comprehensive test runner script with additional features:
+
+```bash
+# Run basic unit tests
+./scripts/run-tests.sh
+
+# Run with coverage report
+./scripts/run-tests.sh --coverage
+
+# Run in watch mode
+./scripts/run-tests.sh --watch
+
+# Run linter
+./scripts/run-tests.sh --lint
+
+# Run full CI/CD suite
+./scripts/run-tests.sh --ci-mode
+
+# Run all checks (lint + tests + coverage)
+./scripts/run-tests.sh --all
+
+# Show help
+./scripts/run-tests.sh --help
 ```
 
 ### Test Coverage
@@ -154,8 +195,8 @@ Feel free to reach out for collaboration opportunities, questions, or just to co
 
 ---
 
-**Built with 💜 by Shelby Cignetti**
+## Built with 💜 by Shelby Cignetti
 
-*Quality Assurance Engineer | Test Automation Specialist | Continuous Improvement Advocate*
+### Quality Assurance Engineer | Test Automation Specialist | Continuous Improvement Advocate
 
 🦆 *Don't forget to click the rubber duck!*
