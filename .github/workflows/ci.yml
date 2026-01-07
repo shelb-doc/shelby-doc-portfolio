@@ -74,16 +74,20 @@ jobs:
       run: |
         echo "Build step - portfolio is static HTML"
         echo "Validating HTML structure..."
-        echo "Preparing deployment from src/ directory"
+        echo "Copying assets to root for deployment"
+        cp -r src/css ./css 2>/dev/null || true
+        cp -r src/js ./js 2>/dev/null || true
+        cp src/robots.txt . 2>/dev/null || true
+        cp src/sitemap.xml . 2>/dev/null || true
 
     - name: Deploy to GitHub Pages
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./src
+        publish_dir: ./
         publish_branch: gh-pages
-        exclude_assets: ''
+        exclude_assets: '.github,node_modules,__tests__,coverage,.git,src,docs,scripts'
 
   lighthouse:
     name: Lighthouse Performance Audit
