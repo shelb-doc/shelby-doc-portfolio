@@ -7,14 +7,13 @@ const fs = require('fs');
 const path = require('path');
 
 describe('Scroll Animations and Observers', () => {
-  let document;
   let mockIntersectionObserver;
   let observerCallback;
 
   beforeEach(() => {
     // Load the HTML file
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../src/index.html'),
+      path.resolve(__dirname, '../index.html'),
       'utf8'
     );
     document.body.innerHTML = html;
@@ -115,16 +114,16 @@ describe('Scroll Animations and Observers', () => {
   });
 
   test('hero animations are defined in CSS', () => {
-    const html = fs.readFileSync(
-      path.resolve(__dirname, '../src/index.html'),
+    const css = fs.readFileSync(
+      path.resolve(__dirname, '../css/styles.css'),
       'utf8'
     );
 
     // Check for animation definitions
-    expect(html).toContain('@keyframes slideDown');
-    expect(html).toContain('@keyframes fadeInUp');
-    expect(html).toContain('@keyframes pulse');
-    expect(html).toContain('@keyframes moveStripes');
+    expect(css).toContain('@keyframes slideDown');
+    expect(css).toContain('@keyframes fadeInUp');
+    expect(css).toContain('@keyframes pulse');
+    expect(css).toContain('@keyframes moveStripes');
   });
 
   test('scroll event listener exists for active nav highlighting', () => {

@@ -7,13 +7,12 @@ const fs = require('fs');
 const path = require('path');
 
 describe('Rubber Duck Easter Egg', () => {
-  let document;
   let duck;
 
   beforeEach(() => {
     // Load the HTML file
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../src/index.html'),
+      path.resolve(__dirname, '../index.html'),
       'utf8'
     );
     document.body.innerHTML = html;
@@ -35,7 +34,7 @@ describe('Rubber Duck Easter Egg', () => {
     const svg = duck.querySelector('svg');
     expect(svg).toBeTruthy();
 
-    const duckBody = svg.querySelector('.st8');
+    const duckBody = svg.querySelector('.st0');
     expect(duckBody).toBeTruthy();
   });
 
@@ -128,18 +127,18 @@ describe('Rubber Duck Easter Egg', () => {
   });
 
   test('duck animations are defined in CSS', () => {
-    const html = fs.readFileSync(
-      path.resolve(__dirname, '../src/index.html'),
+    const duckJs = fs.readFileSync(
+      path.resolve(__dirname, '../js/duck.js'),
       'utf8'
     );
 
-    expect(html).toContain('@keyframes quackFloat');
-    expect(html).toContain('@keyframes duckBounce');
-    expect(html).toContain('@keyframes duckSpin');
+    expect(duckJs).toContain('@keyframes quackFloat');
+    expect(duckJs).toContain('@keyframes duckBounce');
+    expect(duckJs).toContain('@keyframes duckSpin');
   });
 
   test('duck title attribute exists', () => {
-    expect(duck.getAttribute('title')).toBe('Click me! 🦆');
+    expect(duck.getAttribute('title')).toBe('Click me for debugging wisdom!');
   });
 
   test('quack counter logic works correctly', () => {

@@ -7,12 +7,10 @@ const fs = require('fs');
 const path = require('path');
 
 describe('Navigation Functionality', () => {
-  let document;
-
   beforeEach(() => {
     // Load the HTML file
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../src/index.html'),
+      path.resolve(__dirname, '../index.html'),
       'utf8'
     );
     document.body.innerHTML = html;
