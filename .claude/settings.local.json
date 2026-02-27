@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install --package-lock-only)",
+      "Bash(git add .gitignore package-lock.json)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
