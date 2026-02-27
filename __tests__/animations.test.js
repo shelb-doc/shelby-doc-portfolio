@@ -28,6 +28,10 @@ describe('Scroll Animations and Observers', () => {
       };
     });
     global.IntersectionObserver = mockIntersectionObserver;
+
+    // Require the actual source file so Jest tracks coverage
+    jest.resetModules();
+    require('../js/animations');
   });
 
   test('fade-in elements exist on page', () => {
@@ -35,17 +39,13 @@ describe('Scroll Animations and Observers', () => {
     expect(fadeInElements.length).toBeGreaterThan(0);
   });
 
-  test('IntersectionObserver is created with correct options', () => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver(() => {}, observerOptions);
-
+  test('IntersectionObserver is created with correct options by animations.js', () => {
     expect(mockIntersectionObserver).toHaveBeenCalledWith(
       expect.any(Function),
-      observerOptions
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
     );
   });
 
@@ -53,31 +53,10 @@ describe('Scroll Animations and Observers', () => {
     const testElement = document.createElement('div');
     testElement.classList.add('fade-in');
 
-    // Create observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+    // Get the actual callback passed to IntersectionObserver by animations.js
+    const actualCallback = mockIntersectionObserver.mock.calls[0][0];
 
-    // Simulate intersection
-    const mockEntry = {
-      isIntersecting: true,
-      target: testElement
-    };
-
-    // Call the callback directly
-    observer.callback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    };
-
-    observer.callback([mockEntry]);
+    actualCallback([{ isIntersecting: true, target: testElement }]);
 
     expect(testElement.classList.contains('visible')).toBe(true);
   });
@@ -86,29 +65,10 @@ describe('Scroll Animations and Observers', () => {
     const testElement = document.createElement('div');
     testElement.classList.add('fade-in');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+    // Get the actual callback passed to IntersectionObserver by animations.js
+    const actualCallback = mockIntersectionObserver.mock.calls[0][0];
 
-    // Simulate no intersection
-    const mockEntry = {
-      isIntersecting: false,
-      target: testElement
-    };
-
-    observer.callback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    };
-
-    observer.callback([mockEntry]);
+    actualCallback([{ isIntersecting: false, target: testElement }]);
 
     expect(testElement.classList.contains('visible')).toBe(false);
   });

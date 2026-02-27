@@ -4,7 +4,8 @@ module.exports = {
     '**/*.{js,html}',
     '!**/node_modules/**',
     '!**/coverage/**',
-    '!jest.config.js'
+    '!jest.config.js',
+    '!jest.setup.js'
   ],
   coverageThreshold: {
     global: {

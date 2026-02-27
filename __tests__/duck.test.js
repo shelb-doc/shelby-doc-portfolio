@@ -17,6 +17,10 @@ describe('Rubber Duck Easter Egg', () => {
     );
     document.body.innerHTML = html;
 
+    // Require the actual source file so Jest tracks coverage
+    jest.resetModules();
+    require('../js/duck');
+
     duck = document.getElementById('rubberDuck');
   });
 
@@ -38,92 +42,36 @@ describe('Rubber Duck Easter Egg', () => {
     expect(duckBody).toBeTruthy();
   });
 
-  test('playQuack function creates AudioContext', () => {
-    const playQuack = () => {
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
-
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
-
-      oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
-      oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.1);
-
-      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
-
-      oscillator.start(audioContext.currentTime);
-      oscillator.stop(audioContext.currentTime + 0.2);
-
-      return { audioContext, oscillator, gainNode };
-    };
-
-    const result = playQuack();
-    expect(result.audioContext).toBeDefined();
-    expect(result.oscillator).toBeDefined();
-    expect(result.gainNode).toBeDefined();
-  });
-
-  test('showQuackText creates and displays quack message', () => {
-    const showQuackText = () => {
-      const quackText = document.createElement('div');
-      quackText.textContent = 'QUACK!';
-      quackText.style.cssText = `
-        position: fixed;
-        bottom: 7rem;
-        right: 3rem;
-        color: #9b7ab8;
-        font-size: 1.5rem;
-        font-weight: 700;
-        font-family: 'Urbanist', sans-serif;
-        animation: quackFloat 0.8s ease-out;
-        pointer-events: none;
-        z-index: 10000;
-        text-shadow: 0 0 10px rgba(155, 122, 184, 0.5);
-      `;
-
-      document.body.appendChild(quackText);
-      return quackText;
-    };
-
-    const quackText = showQuackText();
-    expect(quackText.textContent).toBe('QUACK!');
-    expect(quackText.style.position).toBe('fixed');
-    expect(quackText.style.zIndex).toBe('10000');
-  });
-
-  test('duck has click event capabilities', () => {
-    const clickHandler = jest.fn();
-    duck.addEventListener('click', clickHandler);
-
+  test('clicking duck triggers playQuack (AudioContext)', () => {
     duck.click();
-    expect(clickHandler).toHaveBeenCalled();
+    expect(window.AudioContext).toHaveBeenCalled();
   });
 
-  test('duck hover effects are defined', () => {
-    const mouseEnterHandler = jest.fn(function() {
-      this.style.transform = 'scale(1.1)';
-      this.style.filter = 'drop-shadow(0 6px 12px rgba(155, 122, 184, 0.6))';
-    });
+  test('clicking duck shows quack text', () => {
+    duck.click();
+    const quackText = document.querySelector('div');
+    const quackDivs = [...document.querySelectorAll('div')].filter(
+      el => el.textContent === 'QUACK!'
+    );
+    expect(quackDivs.length).toBeGreaterThan(0);
+    expect(quackDivs[0].style.position).toBe('fixed');
+    expect(quackDivs[0].style.zIndex).toBe('10000');
+  });
 
-    const mouseLeaveHandler = jest.fn(function() {
-      this.style.transform = 'scale(1)';
-      this.style.filter = 'drop-shadow(0 4px 8px rgba(155, 122, 184, 0.4))';
-    });
+  test('duck click handler is attached and runs', () => {
+    duck.click();
+    // After click, duck should have a bounce animation set by duck.js
+    expect(duck.style.animation).toContain('duckBounce');
+  });
 
-    duck.addEventListener('mouseenter', mouseEnterHandler);
-    duck.addEventListener('mouseleave', mouseLeaveHandler);
-
-    // Simulate mouse enter
-    const enterEvent = new Event('mouseenter');
-    duck.dispatchEvent(enterEvent);
-    expect(mouseEnterHandler).toHaveBeenCalled();
+  test('duck hover effects apply via source handlers', () => {
+    // Simulate mouse enter - triggers handler from duck.js
+    duck.dispatchEvent(new Event('mouseenter'));
+    expect(duck.style.transform).toBe('scale(1.1)');
 
     // Simulate mouse leave
-    const leaveEvent = new Event('mouseleave');
-    duck.dispatchEvent(leaveEvent);
-    expect(mouseLeaveHandler).toHaveBeenCalled();
+    duck.dispatchEvent(new Event('mouseleave'));
+    expect(duck.style.transform).toBe('scale(1)');
   });
 
   test('duck animations are defined in CSS', () => {
@@ -141,16 +89,14 @@ describe('Rubber Duck Easter Egg', () => {
     expect(duck.getAttribute('title')).toBe('Click me for debugging wisdom!');
   });
 
-  test('quack counter logic works correctly', () => {
-    let quackCount = 0;
-
-    // Simulate 5 quacks
+  test('special spin animation triggers every 5 clicks', () => {
+    // Click duck 5 times to trigger the special animation
     for (let i = 0; i < 5; i++) {
-      quackCount++;
+      duck.click();
     }
 
-    expect(quackCount).toBe(5);
-    expect(quackCount % 5).toBe(0); // Should trigger special animation
+    // On the 5th click, duck.js sets duckSpin animation
+    expect(duck.style.animation).toContain('duckSpin');
   });
 
   test('duck animation reset works', (done) => {

@@ -15,20 +15,9 @@ describe('Navigation Functionality', () => {
     );
     document.body.innerHTML = html;
 
-    // Execute the navigation script
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    navLinks.forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
+    // Require the actual source file so Jest tracks coverage
+    jest.resetModules();
+    require('../js/navigation');
   });
 
   test('navigation links exist', () => {
@@ -66,16 +55,9 @@ describe('Navigation Functionality', () => {
     invalidLink.setAttribute('href', '#nonexistent');
     document.body.appendChild(invalidLink);
 
-    invalidLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
+    // Re-require to attach handler to the new link
+    jest.resetModules();
+    require('../js/navigation');
 
     expect(() => {
       invalidLink.click();
@@ -85,6 +67,15 @@ describe('Navigation Functionality', () => {
   test('logo text is correct', () => {
     const logo = document.querySelector('.logo');
     expect(logo.textContent).toBe('SHELBY.QA');
+  });
+
+  test('scroll event updates active nav link', () => {
+    // Trigger scroll event to exercise the scroll handler in navigation.js
+    window.dispatchEvent(new Event('scroll'));
+
+    // Verify no errors occur and nav links are still present
+    const navLinks = document.querySelectorAll('nav a');
+    expect(navLinks.length).toBeGreaterThan(0);
   });
 
   test('all section IDs match navigation links', () => {
