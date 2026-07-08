@@ -30,8 +30,7 @@ describe('Rubber Duck Easter Egg', () => {
   });
 
   test('rubber duck has correct styling', () => {
-    expect(duck.style.position).toBe('fixed');
-    expect(duck.style.cursor).toBe('pointer');
+    expect(duck.classList.contains('rubber-duck')).toBe(true);
   });
 
   test('rubber duck SVG contains correct elements', () => {
