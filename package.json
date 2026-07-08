@@ -6,7 +6,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint js/**/*.js",
-    "serve": "http-server src -p 8080"
+    "serve": "http-server . -p 8080"
   },
   "keywords": [
     "portfolio",
