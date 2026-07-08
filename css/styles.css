@@ -8,6 +8,7 @@
    CSS Variables & Theme Colors
    ======================================== */
 :root {
+    color-scheme: light;
     --bg-primary: #e8d7f1;
     --bg-secondary: #d4b5e3;
     --bg-tertiary: #c9a8db;
@@ -27,6 +28,93 @@
     --purple-soft: #b999d4;
     --purple-medium: #9b7ab8;
     --purple-dark: #7a5a96;
+    --text-on-accent: #ffffff;
+
+    --nav-bg: rgba(232, 215, 241, 0.95);
+    --nav-border: rgba(155, 122, 184, 0.2);
+    --nav-shadow: rgba(155, 122, 184, 0.1);
+    --hero-radial-1: rgba(185, 153, 212, 0.3);
+    --hero-radial-2: rgba(194, 152, 220, 0.3);
+    --hero-tag-bg: rgba(155, 122, 184, 0.2);
+    --hero-tag-border: rgba(155, 122, 184, 0.4);
+    --btn-secondary-bg: rgba(212, 181, 227, 0.5);
+    --btn-secondary-bg-hover: rgba(212, 181, 227, 0.8);
+    --section-tag-bg: rgba(194, 152, 220, 0.3);
+    --section-tag-border: rgba(194, 152, 220, 0.5);
+    --surface: rgba(255, 255, 255, 0.6);
+    --surface-hover: rgba(255, 255, 255, 0.8);
+    --surface-border: rgba(155, 122, 184, 0.3);
+    --surface-shadow: rgba(155, 122, 184, 0.2);
+    --icon-gradient-start: rgba(155, 122, 184, 0.15);
+    --icon-gradient-end: rgba(185, 153, 212, 0.15);
+    --icon-shadow: rgba(155, 122, 184, 0.2);
+    --icon-shadow-hover: rgba(155, 122, 184, 0.35);
+    --icon-hover-gradient-start: rgba(155, 122, 184, 0.25);
+    --icon-hover-gradient-end: rgba(185, 153, 212, 0.25);
+    --tech-tag-bg: rgba(185, 153, 212, 0.2);
+    --project-image-gradient-start: rgba(212, 181, 227, 0.5);
+    --project-image-gradient-end: rgba(185, 153, 212, 0.5);
+    --project-image-border: rgba(155, 122, 184, 0.2);
+    --stripe-color: rgba(168, 85, 247, 0.03);
+    --metrics-bg: rgba(232, 215, 241, 0.5);
+    --timeline-dot-border: var(--bg-primary);
+    --timeline-dot-shadow: rgba(155, 122, 184, 0.6);
+    --highlight-gradient: rgba(155, 122, 184, 0.08);
+    --contact-icon-gradient-start: rgba(168, 85, 247, 0.2);
+    --contact-icon-gradient-end: rgba(192, 132, 252, 0.2);
+    --footer-border: rgba(155, 122, 184, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --bg-primary: #120d1c;
+        --bg-secondary: #1b1328;
+        --bg-tertiary: #241937;
+        --accent-blue: #c9a8db;
+        --accent-cyan: #d8b8ea;
+        --accent-purple: #b999d4;
+        --text-primary: #f3e7fb;
+        --text-secondary: #dac8e8;
+        --text-tertiary: #b99fcf;
+        --purple-soft: #d7bceb;
+        --purple-medium: #c9a8db;
+        --purple-dark: #e8d7f1;
+
+        --nav-bg: rgba(18, 13, 28, 0.9);
+        --nav-border: rgba(216, 184, 234, 0.24);
+        --nav-shadow: rgba(0, 0, 0, 0.4);
+        --hero-radial-1: rgba(155, 122, 184, 0.3);
+        --hero-radial-2: rgba(124, 91, 155, 0.3);
+        --hero-tag-bg: rgba(216, 184, 234, 0.2);
+        --hero-tag-border: rgba(216, 184, 234, 0.45);
+        --btn-secondary-bg: rgba(92, 66, 125, 0.45);
+        --btn-secondary-bg-hover: rgba(112, 81, 149, 0.6);
+        --section-tag-bg: rgba(155, 122, 184, 0.3);
+        --section-tag-border: rgba(216, 184, 234, 0.45);
+        --surface: rgba(38, 28, 56, 0.72);
+        --surface-hover: rgba(53, 40, 75, 0.86);
+        --surface-border: rgba(216, 184, 234, 0.3);
+        --surface-shadow: rgba(0, 0, 0, 0.35);
+        --icon-gradient-start: rgba(216, 184, 234, 0.2);
+        --icon-gradient-end: rgba(155, 122, 184, 0.2);
+        --icon-shadow: rgba(0, 0, 0, 0.3);
+        --icon-shadow-hover: rgba(0, 0, 0, 0.45);
+        --icon-hover-gradient-start: rgba(216, 184, 234, 0.3);
+        --icon-hover-gradient-end: rgba(155, 122, 184, 0.3);
+        --tech-tag-bg: rgba(155, 122, 184, 0.22);
+        --project-image-gradient-start: rgba(92, 66, 125, 0.5);
+        --project-image-gradient-end: rgba(124, 91, 155, 0.5);
+        --project-image-border: rgba(216, 184, 234, 0.22);
+        --stripe-color: rgba(216, 184, 234, 0.1);
+        --metrics-bg: rgba(58, 42, 81, 0.5);
+        --timeline-dot-border: #120d1c;
+        --timeline-dot-shadow: rgba(0, 0, 0, 0.45);
+        --highlight-gradient: rgba(216, 184, 234, 0.16);
+        --contact-icon-gradient-start: rgba(216, 184, 234, 0.25);
+        --contact-icon-gradient-end: rgba(155, 122, 184, 0.25);
+        --footer-border: rgba(216, 184, 234, 0.24);
+    }
 }
 
 /* ========================================
@@ -59,12 +147,12 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(232, 215, 241, 0.95);
+    background: var(--nav-bg);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(155, 122, 184, 0.2);
+    border-bottom: 1px solid var(--nav-border);
     z-index: 1000;
     animation: slideDown 0.6s ease-out;
-    box-shadow: 0 2px 10px rgba(155, 122, 184, 0.1);
+    box-shadow: 0 2px 10px var(--nav-shadow);
 }
 
 @keyframes slideDown {
@@ -147,8 +235,8 @@ nav a:hover::after {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 50%, rgba(185, 153, 212, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(194, 152, 220, 0.3) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, var(--hero-radial-1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, var(--hero-radial-2) 0%, transparent 50%);
     animation: pulse 8s ease-in-out infinite;
 }
 
@@ -177,8 +265,8 @@ nav a:hover::after {
 .hero-tag {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: rgba(155, 122, 184, 0.2);
-    border: 1px solid rgba(155, 122, 184, 0.4);
+    background: var(--hero-tag-bg);
+    border: 1px solid var(--hero-tag-border);
     border-radius: 50px;
     color: var(--purple-dark);
     font-size: 0.9rem;
@@ -265,7 +353,7 @@ nav a:hover::after {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--purple-medium), var(--purple-soft));
-    color: white;
+    color: var(--text-on-accent);
     box-shadow: 0 0 30px rgba(155, 122, 184, 0.4);
 }
 
@@ -275,13 +363,13 @@ nav a:hover::after {
 }
 
 .btn-secondary {
-    background: rgba(212, 181, 227, 0.5);
+    background: var(--btn-secondary-bg);
     color: var(--text-primary);
-    border: 1px solid rgba(155, 122, 184, 0.4);
+    border: 1px solid var(--hero-tag-border);
 }
 
 .btn-secondary:hover {
-    background: rgba(212, 181, 227, 0.8);
+    background: var(--btn-secondary-bg-hover);
     border-color: var(--purple-medium);
 }
 
@@ -301,8 +389,8 @@ section {
 .section-tag {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: rgba(194, 152, 220, 0.3);
-    border: 1px solid rgba(194, 152, 220, 0.5);
+    background: var(--section-tag-bg);
+    border: 1px solid var(--section-tag-border);
     border-radius: 50px;
     color: var(--purple-dark);
     font-size: 0.9rem;
@@ -332,8 +420,8 @@ section {
 }
 
 .skill-card {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(155, 122, 184, 0.3);
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
     border-radius: 16px;
     padding: 2rem;
     transition: all 0.4s ease;
@@ -358,8 +446,8 @@ section {
 .skill-card:hover {
     transform: translateY(-5px);
     border-color: var(--purple-medium);
-    box-shadow: 0 20px 40px rgba(155, 122, 184, 0.2);
-    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px var(--surface-shadow);
+    background: var(--surface-hover);
 }
 
 .skill-card:hover::before {
@@ -369,21 +457,21 @@ section {
 .skill-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, rgba(155, 122, 184, 0.15), rgba(185, 153, 212, 0.15));
+    background: linear-gradient(135deg, var(--icon-gradient-start), var(--icon-gradient-end));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     margin: 0 auto 1.5rem;
-    box-shadow: 0 4px 15px rgba(155, 122, 184, 0.2);
+    box-shadow: 0 4px 15px var(--icon-shadow);
     transition: all 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(155, 122, 184, 0.35);
-    background: linear-gradient(135deg, rgba(155, 122, 184, 0.25), rgba(185, 153, 212, 0.25));
+    box-shadow: 0 6px 20px var(--icon-shadow-hover);
+    background: linear-gradient(135deg, var(--icon-hover-gradient-start), var(--icon-hover-gradient-end));
 }
 
 .skill-card h3 {
@@ -404,8 +492,8 @@ section {
 
 .skill-tag {
     padding: 0.25rem 0.75rem;
-    background: rgba(185, 153, 212, 0.2);
-    border: 1px solid rgba(155, 122, 184, 0.3);
+    background: var(--tech-tag-bg);
+    border: 1px solid var(--surface-border);
     border-radius: 20px;
     font-size: 0.85rem;
     color: var(--purple-dark);
@@ -422,8 +510,8 @@ section {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(155, 122, 184, 0.3);
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.4s ease;
@@ -432,19 +520,19 @@ section {
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(155, 122, 184, 0.25);
+    box-shadow: 0 25px 50px var(--surface-shadow);
     border-color: var(--purple-medium);
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--surface-hover);
 }
 
 .project-image {
     height: 200px;
-    background: linear-gradient(135deg, rgba(212, 181, 227, 0.5), rgba(185, 153, 212, 0.5));
+    background: linear-gradient(135deg, var(--project-image-gradient-start), var(--project-image-gradient-end));
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    border-bottom: 1px solid rgba(155, 122, 184, 0.2);
+    border-bottom: 1px solid var(--project-image-border);
     position: relative;
     overflow: hidden;
 }
@@ -460,8 +548,8 @@ section {
         45deg,
         transparent,
         transparent 10px,
-        rgba(168, 85, 247, 0.03) 10px,
-        rgba(168, 85, 247, 0.03) 20px
+        var(--stripe-color) 10px,
+        var(--stripe-color) 20px
     );
     animation: moveStripes 20s linear infinite;
 }
@@ -490,7 +578,7 @@ section {
     gap: 1.5rem;
     margin-bottom: 1.5rem;
     padding: 1rem;
-    background: rgba(232, 215, 241, 0.5);
+    background: var(--metrics-bg);
     border-radius: 8px;
 }
 
@@ -556,8 +644,8 @@ section {
 
 .timeline-content {
     flex: 1;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(155, 122, 184, 0.3);
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
     border-radius: 16px;
     padding: 2rem;
     position: relative;
@@ -576,9 +664,9 @@ section {
     width: 20px;
     height: 20px;
     background: var(--purple-medium);
-    border: 4px solid var(--bg-primary);
+    border: 4px solid var(--timeline-dot-border);
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(155, 122, 184, 0.6);
+    box-shadow: 0 0 20px var(--timeline-dot-shadow);
     z-index: 10;
 }
 
@@ -632,7 +720,7 @@ section {
 
 /* Highlighted achievement bullets */
 .timeline-content li.highlight {
-    background: linear-gradient(90deg, rgba(155, 122, 184, 0.08), transparent);
+    background: linear-gradient(90deg, var(--highlight-gradient), transparent);
     border-left: 3px solid var(--purple-medium);
     padding: 0.75rem;
     padding-left: 1.5rem;
@@ -642,7 +730,7 @@ section {
 }
 
 .timeline-item:nth-child(odd) .timeline-content li.highlight {
-    background: linear-gradient(270deg, rgba(155, 122, 184, 0.08), transparent);
+    background: linear-gradient(270deg, var(--highlight-gradient), transparent);
     border-left: none;
     border-right: 3px solid var(--purple-medium);
     padding-left: 0.75rem;
@@ -668,8 +756,8 @@ section {
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(155, 122, 184, 0.3);
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
     border-radius: 16px;
     padding: 2rem;
     text-align: center;
@@ -680,14 +768,14 @@ section {
 .contact-card:hover {
     transform: translateY(-5px);
     border-color: var(--purple-medium);
-    box-shadow: 0 20px 40px rgba(155, 122, 184, 0.2);
-    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px var(--surface-shadow);
+    background: var(--surface-hover);
 }
 
 .contact-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(192, 132, 252, 0.2));
+    background: linear-gradient(135deg, var(--contact-icon-gradient-start), var(--contact-icon-gradient-end));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -796,7 +884,7 @@ section {
 footer {
     padding: 3rem 0;
     text-align: center;
-    border-top: 1px solid rgba(155, 122, 184, 0.2);
+    border-top: 1px solid var(--footer-border);
     color: var(--text-secondary);
 }
 
