@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "lint": "eslint src/**/*.html",
+    "lint": "eslint js/**/*.js",
     "serve": "http-server src -p 8080"
   },
   "keywords": [
