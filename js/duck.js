@@ -112,6 +112,13 @@ function initDuck(doc = document, win = window) {
     }, 1000);
   });
 
+  duck.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      duck.click();
+    }
+  });
+
   duck.addEventListener("mouseenter", function () {
     this.classList.add("duck--hovered");
   });

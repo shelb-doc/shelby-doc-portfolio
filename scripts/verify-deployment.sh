@@ -47,28 +47,28 @@ cd "$PROJECT_ROOT"
 print_header "GitHub Pages Deployment Verification"
 echo ""
 
-# Check 1: Verify src directory structure
+# Check 1: Verify root directory structure
 print_info "Checking file structure..."
-if [ -f "src/index.html" ]; then
-    print_success "src/index.html exists"
+if [ -f "index.html" ]; then
+    print_success "index.html exists"
 else
-    print_error "src/index.html not found"
+    print_error "index.html not found"
     exit 1
 fi
 
-if [ -d "src/css" ] && [ -f "src/css/styles.css" ]; then
+if [ -d "css" ] && [ -f "css/styles.css" ]; then
     print_success "CSS directory and files exist"
 else
-    print_error "CSS files not found in src/css/"
+    print_error "CSS files not found in css/"
     exit 1
 fi
 
-if [ -d "src/js" ]; then
-    JS_FILES=$(find src/js -name "*.js" | wc -l)
+if [ -d "js" ]; then
+    JS_FILES=$(find js -name "*.js" | wc -l)
     if [ "$JS_FILES" -gt 0 ]; then
         print_success "JavaScript files exist ($JS_FILES files)"
     else
-        print_error "No JavaScript files found in src/js/"
+        print_error "No JavaScript files found in js/"
         exit 1
     fi
 else
@@ -83,11 +83,11 @@ print_info "Checking GitHub Actions workflow..."
 if [ -f ".github/workflows/ci.yml" ]; then
     print_success "Workflow file exists"
 
-    if grep -q "publish_dir: ./src" ".github/workflows/ci.yml"; then
-        print_success "Workflow configured to deploy from src/"
+    if grep -q "publish_dir: ." ".github/workflows/ci.yml"; then
+        print_success "Workflow configured to deploy from root"
     else
         print_warning "Workflow may not be configured correctly"
-        print_info "Expected: publish_dir: ./src"
+        print_info "Expected: publish_dir: ."
     fi
 else
     print_error "Workflow file not found"
@@ -116,7 +116,7 @@ echo ""
 print_info "Checking for common deployment issues..."
 
 # Check for absolute paths in HTML
-if grep -q 'href="/' src/index.html || grep -q 'src="/' src/index.html; then
+if grep -q 'href="/' index.html || grep -q 'src="/' index.html; then
     print_warning "Found absolute paths in HTML - may cause 404 errors"
     print_info "Use relative paths: href=\"css/styles.css\" not href=\"/css/styles.css\""
 else
@@ -124,7 +124,7 @@ else
 fi
 
 # Check for proper meta tags
-if grep -q '<meta name="description"' src/index.html; then
+if grep -q '<meta name="description"' index.html; then
     print_success "Meta description found"
 else
     print_warning "Meta description not found"
