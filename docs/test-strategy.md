@@ -173,7 +173,7 @@ global.IntersectionObserver = class IntersectionObserver {...}
 Tests load the actual HTML file:
 ```javascript
 const html = fs.readFileSync(
-  path.resolve(__dirname, '../src/index.html'),
+  path.resolve(__dirname, '../index.html'),
   'utf8'
 );
 ```
