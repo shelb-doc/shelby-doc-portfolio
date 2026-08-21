@@ -17,7 +17,8 @@ describe('Navigation Functionality', () => {
 
     // Require the actual source file so Jest tracks coverage
     jest.resetModules();
-    require('../js/navigation');
+    const { initNavigation } = require('../js/navigation');
+    initNavigation(document, window);
   });
 
   test('navigation links exist', () => {
@@ -57,7 +58,8 @@ describe('Navigation Functionality', () => {
 
     // Re-require to attach handler to the new link
     jest.resetModules();
-    require('../js/navigation');
+    const { initNavigation } = require('../js/navigation');
+    initNavigation(document, window);
 
     expect(() => {
       invalidLink.click();
@@ -86,5 +88,96 @@ describe('Navigation Functionality', () => {
       const section = document.getElementById(id);
       expect(section).toBeTruthy();
     });
+  });
+
+  test('initNavigation guard handles invalid document safely', () => {
+    const { initNavigation } = require('../js/navigation');
+    expect(() => initNavigation(null, window)).not.toThrow();
+  });
+
+  test('scroll handler throttles work with requestAnimationFrame', () => {
+    const rafSpy = jest.spyOn(window, 'requestAnimationFrame').mockImplementation(cb => {
+      cb();
+      return 1;
+    });
+
+    const { initNavigation } = require('../js/navigation');
+    initNavigation(document, window);
+
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('scroll'));
+
+    expect(rafSpy).toHaveBeenCalled();
+    rafSpy.mockRestore();
+  });
+
+  test('missing section IDs in nav links are handled safely', () => {
+    const nav = document.querySelector('nav ul');
+    const li = document.createElement('li');
+    const brokenLink = document.createElement('a');
+    brokenLink.setAttribute('href', '#does-not-exist');
+    brokenLink.textContent = 'Broken';
+    li.appendChild(brokenLink);
+    nav.appendChild(li);
+
+    jest.resetModules();
+    const { initNavigation } = require('../js/navigation');
+
+    expect(() => initNavigation(document, window)).not.toThrow();
+    expect(() => window.dispatchEvent(new Event('scroll'))).not.toThrow();
+  });
+
+  test('module defers navigation initialization until DOMContentLoaded when document is loading', () => {
+    const originalDescriptor = Object.getOwnPropertyDescriptor(document, 'readyState');
+    const addEventListenerSpy = jest.spyOn(document, 'addEventListener');
+
+    Object.defineProperty(document, 'readyState', {
+      configurable: true,
+      value: 'loading'
+    });
+
+    jest.resetModules();
+    require('../js/navigation');
+
+    expect(addEventListenerSpy).toHaveBeenCalledWith(
+      'DOMContentLoaded',
+      expect.any(Function)
+    );
+
+    addEventListenerSpy.mockRestore();
+    if (originalDescriptor) {
+      Object.defineProperty(document, 'readyState', originalDescriptor);
+    }
+  });
+
+  test('DOMContentLoaded callback runs deferred navigation initialization', () => {
+    const originalDescriptor = Object.getOwnPropertyDescriptor(document, 'readyState');
+    const addEventListenerSpy = jest.spyOn(document, 'addEventListener');
+
+    Object.defineProperty(document, 'readyState', {
+      configurable: true,
+      value: 'loading'
+    });
+
+    jest.resetModules();
+    require('../js/navigation');
+
+    const domReadyCall = addEventListenerSpy.mock.calls.find(
+      ([eventName]) => eventName === 'DOMContentLoaded'
+    );
+    expect(domReadyCall).toBeTruthy();
+
+    const callback = domReadyCall[1];
+    callback();
+
+    const navLink = document.querySelector('a[href="#skills"]');
+    const skillsSection = document.querySelector('#skills');
+    navLink.click();
+    expect(skillsSection.scrollIntoView).toHaveBeenCalled();
+
+    addEventListenerSpy.mockRestore();
+    if (originalDescriptor) {
+      Object.defineProperty(document, 'readyState', originalDescriptor);
+    }
   });
 });

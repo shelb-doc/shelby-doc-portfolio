@@ -8,7 +8,6 @@ const path = require('path');
 
 describe('Scroll Animations and Observers', () => {
   let mockIntersectionObserver;
-  let observerCallback;
 
   beforeEach(() => {
     // Load the HTML file
@@ -20,7 +19,8 @@ describe('Scroll Animations and Observers', () => {
 
     // Mock IntersectionObserver with callback capture
     mockIntersectionObserver = jest.fn((callback, options) => {
-      observerCallback = callback;
+      void callback;
+      void options;
       return {
         observe: jest.fn(),
         disconnect: jest.fn(),
@@ -31,7 +31,8 @@ describe('Scroll Animations and Observers', () => {
 
     // Require the actual source file so Jest tracks coverage
     jest.resetModules();
-    require('../js/animations');
+    const { initAnimations } = require('../js/animations');
+    initAnimations(document, window);
   });
 
   test('fade-in elements exist on page', () => {
@@ -114,5 +115,75 @@ describe('Scroll Animations and Observers', () => {
       expect(tag).toBeTruthy();
       expect(heading).toBeTruthy();
     });
+  });
+
+  test('initAnimations guard handles invalid document safely', () => {
+    const { initAnimations } = require('../js/animations');
+    expect(() => initAnimations(null, window)).not.toThrow();
+  });
+
+  test('initAnimations exits when IntersectionObserver is unavailable', () => {
+    const { initAnimations } = require('../js/animations');
+    const originalWindowObserver = window.IntersectionObserver;
+    const originalGlobalObserver = global.IntersectionObserver;
+
+    window.IntersectionObserver = undefined;
+    global.IntersectionObserver = undefined;
+
+    expect(() => initAnimations(document, window)).not.toThrow();
+
+    window.IntersectionObserver = originalWindowObserver;
+    global.IntersectionObserver = originalGlobalObserver;
+  });
+
+  test('module defers initialization until DOMContentLoaded when document is loading', () => {
+    const originalDescriptor = Object.getOwnPropertyDescriptor(document, 'readyState');
+    const addEventListenerSpy = jest.spyOn(document, 'addEventListener');
+
+    Object.defineProperty(document, 'readyState', {
+      configurable: true,
+      value: 'loading'
+    });
+
+    jest.resetModules();
+    require('../js/animations');
+
+    expect(addEventListenerSpy).toHaveBeenCalledWith(
+      'DOMContentLoaded',
+      expect.any(Function)
+    );
+
+    addEventListenerSpy.mockRestore();
+    if (originalDescriptor) {
+      Object.defineProperty(document, 'readyState', originalDescriptor);
+    }
+  });
+
+  test('DOMContentLoaded callback runs deferred animation initialization', () => {
+    const originalDescriptor = Object.getOwnPropertyDescriptor(document, 'readyState');
+    const addEventListenerSpy = jest.spyOn(document, 'addEventListener');
+
+    Object.defineProperty(document, 'readyState', {
+      configurable: true,
+      value: 'loading'
+    });
+
+    jest.resetModules();
+    require('../js/animations');
+
+    const domReadyCall = addEventListenerSpy.mock.calls.find(
+      ([eventName]) => eventName === 'DOMContentLoaded'
+    );
+    expect(domReadyCall).toBeTruthy();
+
+    const callback = domReadyCall[1];
+    callback();
+
+    expect(mockIntersectionObserver).toHaveBeenCalled();
+
+    addEventListenerSpy.mockRestore();
+    if (originalDescriptor) {
+      Object.defineProperty(document, 'readyState', originalDescriptor);
+    }
   });
 });

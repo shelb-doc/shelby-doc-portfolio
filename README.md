@@ -49,14 +49,13 @@ portfolio/
 │   ├── navigation.test.js      # Navigation tests
 │   ├── animations.test.js      # Animation and observer tests
 │   └── duck.test.js            # Easter egg tests
-├── src/
-│   ├── index.html              # Main HTML file
-│   ├── css/
-│   │   └── styles.css          # All styles and animations
-│   └── js/
-│       ├── navigation.js       # Navigation and smooth scrolling
-│       ├── animations.js       # IntersectionObserver animations
-│       └── duck.js             # Rubber duck Easter egg
+├── index.html                  # Main HTML file
+├── css/
+│   └── styles.css              # All styles and animations
+├── js/
+│   ├── navigation.js           # Navigation and smooth scrolling
+│   ├── animations.js           # IntersectionObserver animations
+│   └── duck.js                 # Rubber duck Easter egg
 ├── docs/
 │   └── test-strategy.md        # Testing strategy documentation
 ├── scripts/
@@ -91,6 +90,12 @@ npm test
 
 # Run tests in watch mode
 npm run test:watch
+
+# Run linter
+npm run lint
+
+# Serve locally
+npm run serve
 
 # Generate coverage report
 npm test -- --coverage

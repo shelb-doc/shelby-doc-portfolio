@@ -3,12 +3,36 @@
  * Interactive rubber duck debugging companion with sound effects
  */
 
-const duck = document.getElementById('rubberDuck');
-let quackCount = 0;
+let audioContextInstance = null;
+
+function getAudioContext(win = window) {
+    if (!audioContextInstance) {
+        const AudioContextConstructor =
+            win.AudioContext ||
+            win.webkitAudioContext ||
+            (typeof globalThis !== 'undefined' ? globalThis.AudioContext : undefined) ||
+            (typeof globalThis !== 'undefined' ? globalThis.webkitAudioContext : undefined);
+        if (!AudioContextConstructor) {
+            return null;
+        }
+
+        audioContextInstance = new AudioContextConstructor();
+    }
+
+    return audioContextInstance;
+}
 
 // Quack sounds (using Web Audio API to generate duck-like sounds)
-function playQuack() {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+function playQuack(win = window) {
+    const audioContext = getAudioContext(win);
+    if (!audioContext) {
+        return;
+    }
+
+    if (audioContext.state === 'suspended' && typeof audioContext.resume === 'function') {
+        audioContext.resume();
+    }
+
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
 
@@ -27,101 +51,71 @@ function playQuack() {
 }
 
 // Show quack text
-function showQuackText() {
-    const quackText = document.createElement('div');
+function showQuackText(doc = document) {
+    const quackText = doc.createElement('div');
+    quackText.className = 'duck-quack-text';
     quackText.textContent = 'QUACK!';
-    quackText.style.cssText = `
-        position: fixed;
-        bottom: 7rem;
-        right: 3rem;
-        color: #9b7ab8;
-        font-size: 1.5rem;
-        font-weight: 700;
-        font-family: 'Urbanist', sans-serif;
-        animation: quackFloat 0.8s ease-out;
-        pointer-events: none;
-        z-index: 10000;
-        text-shadow: 0 0 10px rgba(155, 122, 184, 0.5);
-    `;
 
-    document.body.appendChild(quackText);
+    doc.body.appendChild(quackText);
 
     setTimeout(() => {
         quackText.remove();
     }, 800);
 }
 
-// Add floating animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes quackFloat {
-        0% {
-            opacity: 1;
-            transform: translateY(0) scale(0.5);
-        }
-        50% {
-            opacity: 1;
-            transform: translateY(-30px) scale(1.2);
-        }
-        100% {
-            opacity: 0;
-            transform: translateY(-60px) scale(1);
-        }
+function initDuck(doc = document, win = window) {
+    if (!doc || !doc.body) {
+        return;
     }
 
-    @keyframes duckBounce {
-        0%, 100% {
-            transform: translateY(0) rotate(0deg);
-        }
-        25% {
-            transform: translateY(-15px) rotate(-5deg);
-        }
-        75% {
-            transform: translateY(-5px) rotate(5deg);
-        }
+    const duck = doc.getElementById('rubberDuck');
+    if (!duck) {
+        return;
     }
 
-    @keyframes duckSpin {
-        0% { transform: rotate(0deg) scale(1); }
-        25% { transform: rotate(90deg) scale(1.2); }
-        50% { transform: rotate(180deg) scale(1); }
-        75% { transform: rotate(270deg) scale(1.2); }
-        100% { transform: rotate(360deg) scale(1); }
+    let quackCount = 0;
+    let animationResetTimer = null;
+
+    duck.addEventListener('click', function (e) {
+        e.preventDefault();
+        quackCount++;
+
+        playQuack(win);
+        showQuackText(doc);
+
+        duck.classList.remove('duck--bouncing', 'duck--spinning');
+        if (quackCount % 5 === 0) {
+            duck.classList.add('duck--spinning');
+        } else {
+            duck.classList.add('duck--bouncing');
+        }
+
+        if (animationResetTimer) {
+            clearTimeout(animationResetTimer);
+        }
+
+        animationResetTimer = setTimeout(() => {
+            duck.classList.remove('duck--bouncing', 'duck--spinning');
+        }, 1000);
+    });
+
+    duck.addEventListener('mouseenter', function () {
+        this.classList.add('duck--hovered');
+    });
+
+    duck.addEventListener('mouseleave', function () {
+        this.classList.remove('duck--hovered');
+    });
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { initDuck, playQuack, showQuackText };
+}
+
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => initDuck(document, window));
+    } else {
+        initDuck(document, window);
     }
-`;
-document.head.appendChild(style);
-
-// Click handler
-duck.addEventListener('click', function(e) {
-    e.preventDefault();
-    quackCount++;
-
-    // Play quack sound
-    playQuack();
-
-    // Show quack text
-    showQuackText();
-
-    // Bounce animation
-    duck.style.animation = 'duckBounce 0.5s ease-out';
-
-    // Special animation every 5 quacks
-    if (quackCount % 5 === 0) {
-        duck.style.animation = 'duckSpin 1s ease-in-out';
-    }
-
-    setTimeout(() => {
-        duck.style.animation = '';
-    }, 1000);
-});
-
-// Hover effect
-duck.addEventListener('mouseenter', function() {
-    this.style.transform = 'scale(1.1)';
-    this.style.filter = 'drop-shadow(0 6px 12px rgba(155, 122, 184, 0.6))';
-});
-
-duck.addEventListener('mouseleave', function() {
-    this.style.transform = 'scale(1)';
-    this.style.filter = 'drop-shadow(0 4px 8px rgba(155, 122, 184, 0.4))';
-});
+}
