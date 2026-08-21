@@ -47,7 +47,7 @@ cd "$PROJECT_ROOT"
 print_header "GitHub Pages Deployment Verification"
 echo ""
 
-# Check 1: Verify file structure
+# Check 1: Verify root directory structure
 print_info "Checking file structure..."
 if [ -f "index.html" ]; then
     print_success "index.html exists"
@@ -84,7 +84,7 @@ if [ -f ".github/workflows/ci.yml" ]; then
     print_success "Workflow file exists"
 
     if grep -q "publish_dir: ." ".github/workflows/ci.yml"; then
-        print_success "Workflow configured to deploy from repo root"
+        print_success "Workflow configured to deploy from root"
     else
         print_warning "Workflow may not be configured correctly"
         print_info "Expected: publish_dir: ."
