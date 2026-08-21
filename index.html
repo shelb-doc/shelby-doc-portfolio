@@ -1,542 +1,896 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <!-- Essential Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <head>
+        <!-- Essential Meta Tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Primary SEO Meta Tags -->
-    <title>Shelby Cignetti - Senior Software Development Engineer in Test | Test Automation & CI/CD Expert</title>
-    <meta name="title" content="Shelby Cignetti - Senior Software Development Engineer in Test | Test Automation & CI/CD Expert">
-    <meta name="description" content="Senior Software Development Engineer in Test with 5+ years of quality engineering experience in Ruby/Cucumber BDD, API automation, AWS diagnostics, Selenium Grid, and GitHub Actions CI/CD.">
-    <meta name="keywords" content="Senior Software Development Engineer in Test, SDET, QA Engineer, Ruby, Cucumber, RSpec, FactoryBot, Selenium Grid, GitHub Actions, AWS ECS, Splunk SPL, REST API Testing, GraphQL, OAuth, CI/CD">
-    <meta name="author" content="Shelby Cignetti">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
+        <!-- Primary SEO Meta Tags -->
+        <title>
+            Shelby Cignetti - Senior Software Development Engineer in Test |
+            Test Automation & CI/CD Expert
+        </title>
+        <meta
+            name="title"
+            content="Shelby Cignetti - Senior Software Development Engineer in Test | Test Automation & CI/CD Expert"
+        />
+        <meta
+            name="description"
+            content="Senior Software Development Engineer in Test with 5+ years of quality engineering experience in Ruby/Cucumber BDD, API automation, AWS diagnostics, Selenium Grid, and GitHub Actions CI/CD."
+        />
+        <meta
+            name="keywords"
+            content="Senior Software Development Engineer in Test, SDET, QA Engineer, Ruby, Cucumber, RSpec, FactoryBot, Selenium Grid, GitHub Actions, AWS ECS, Splunk SPL, REST API Testing, GraphQL, OAuth, CI/CD"
+        />
+        <meta name="author" content="Shelby Cignetti" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://shelb-doc.github.io/shelby-doc-portfolio/">
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://shelb-doc.github.io/shelby-doc-portfolio/"
+        />
 
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://shelb-doc.github.io/shelby-doc-portfolio/">
-    <meta property="og:title" content="Shelby Cignetti - Senior Software Development Engineer in Test | Test Automation Expert">
-    <meta property="og:description" content="Senior Software Development Engineer in Test specializing in Ruby/Cucumber automation, CI/CD workflows, AWS troubleshooting, and Selenium Grid reliability.">
-    <meta property="og:image" content="https://shelb-doc.github.io/shelby-doc-portfolio/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Shelby Cignetti Portfolio">
-    <meta property="og:locale" content="en_US">
+        <!-- Open Graph / Facebook Meta Tags -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://shelb-doc.github.io/shelby-doc-portfolio/"
+        />
+        <meta
+            property="og:title"
+            content="Shelby Cignetti - Senior Software Development Engineer in Test | Test Automation Expert"
+        />
+        <meta
+            property="og:description"
+            content="Senior Software Development Engineer in Test specializing in Ruby/Cucumber automation, CI/CD workflows, AWS troubleshooting, and Selenium Grid reliability."
+        />
+        <meta
+            property="og:image"
+            content="https://shelb-doc.github.io/shelby-doc-portfolio/og-image.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Shelby Cignetti Portfolio" />
+        <meta property="og:locale" content="en_US" />
 
-    <!-- LinkedIn Meta Tags -->
-    <meta property="profile:first_name" content="Shelby">
-    <meta property="profile:last_name" content="De Oliveira Cignetti">
-    <meta property="profile:username" content="shelbycignetti">
+        <!-- LinkedIn Meta Tags -->
+        <meta property="profile:first_name" content="Shelby" />
+        <meta property="profile:last_name" content="De Oliveira Cignetti" />
+        <meta property="profile:username" content="shelbycignetti" />
 
-    <!-- Additional SEO Meta Tags -->
-    <meta name="geo.region" content="US-GA">
-    <meta name="geo.placename" content="Atlanta">
-    <meta name="geo.position" content="33.7490;-84.3880">
-    <meta name="ICBM" content="33.7490, -84.3880">
+        <!-- Additional SEO Meta Tags -->
+        <meta name="geo.region" content="US-GA" />
+        <meta name="geo.placename" content="Atlanta" />
+        <meta name="geo.position" content="33.7490;-84.3880" />
+        <meta name="ICBM" content="33.7490, -84.3880" />
 
-    <!-- Theme Color for Mobile Browsers -->
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#9b7ab8">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1328">
-    <meta name="msapplication-TileColor" content="#9b7ab8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <!-- Theme Color for Mobile Browsers -->
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#9b7ab8" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1328" />
+        <meta name="msapplication-TileColor" content="#9b7ab8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon-16x16.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png"
+        />
 
-    <!-- Structured Data (JSON-LD) for Rich Results -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Shelby Cignetti",
-      "url": "https://shelb-doc.github.io/shelby-doc-portfolio/",
-      "image": "https://shelb-doc.github.io/shelby-doc-portfolio/profile-image.jpg",
-      "jobTitle": "Senior Software Development Engineer in Test",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Atlanta",
-        "addressRegion": "GA",
-        "addressCountry": "US"
-      },
-      "alumniOf": [
-        {
-          "@type": "EducationalOrganization",
-          "name": "Georgia Institute of Technology"
-        },
-        {
-          "@type": "EducationalOrganization",
-          "name": "Southern Methodist University"
-        }
-      ],
-      "email": "shelbycignetti@gmail.com",
-      "telephone": "+1-678-680-8638",
-      "sameAs": [
-        "https://www.linkedin.com/in/shelbycignetti/",
-        "https://github.com/shelb-doc"
-      ],
-      "knowsAbout": [
-        "Ruby",
-        "Cucumber",
-        "RSpec",
-        "FactoryBot",
-        "Selenium Grid",
-        "GitHub Actions",
-        "AWS",
-        "Splunk SPL",
-        "REST API Testing",
-        "GraphQL",
-        "OAuth/JWT",
-        "Root Cause Analysis"
-      ]
-    }
-    </script>
+        <!-- Structured Data (JSON-LD) for Rich Results -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Shelby Cignetti",
+                "url": "https://shelb-doc.github.io/shelby-doc-portfolio/",
+                "image": "https://shelb-doc.github.io/shelby-doc-portfolio/profile-image.jpg",
+                "jobTitle": "Senior Software Development Engineer in Test",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Atlanta",
+                    "addressRegion": "GA",
+                    "addressCountry": "US"
+                },
+                "alumniOf": [
+                    {
+                        "@type": "EducationalOrganization",
+                        "name": "Georgia Institute of Technology"
+                    },
+                    {
+                        "@type": "EducationalOrganization",
+                        "name": "Southern Methodist University"
+                    }
+                ],
+                "email": "shelbycignetti@gmail.com",
+                "telephone": "+1-678-680-8638",
+                "sameAs": [
+                    "https://www.linkedin.com/in/shelbycignetti/",
+                    "https://github.com/shelb-doc"
+                ],
+                "knowsAbout": [
+                    "Ruby",
+                    "Cucumber",
+                    "RSpec",
+                    "FactoryBot",
+                    "Selenium Grid",
+                    "GitHub Actions",
+                    "AWS",
+                    "Splunk SPL",
+                    "REST API Testing",
+                    "GraphQL",
+                    "OAuth/JWT",
+                    "Root Cause Analysis"
+                ]
+            }
+        </script>
 
-    <!-- Performance Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+        <!-- Performance Optimization -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <!-- Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">SHELBY.QA</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-tag">SENIOR SOFTWARE DEVELOPMENT ENGINEER IN TEST</span>
-                <h1>Building <span class="gradient-text">Bulletproof</span><br>Software Systems</h1>
-                <p>Senior Software Development Engineer in Test with 5+ years building scalable API and browser automation, CI/CD workflows, and cloud diagnostics that reduce risk and accelerate delivery. Recent impact includes Ruby/Cucumber BDD framework ownership, GitHub Actions reusable workflow hardening, Selenium Grid stability improvements, and multi-service root cause analysis across AWS and Splunk.</p>
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-icon">🚀</span>
-                        <span class="stat-value">12+</span>
-                        <span class="stat-label">Major Releases</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-icon">📈</span>
-                        <span class="stat-value">90%</span>
-                        <span class="stat-label">Test Coverage</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-icon">🎯</span>
-                        <span class="stat-value">80%</span>
-                        <span class="stat-label">Defects Reduced</span>
-                    </div>
-                </div>
-                <div class="cta-buttons">
-                    <a href="#experience" class="btn btn-primary">View Experience</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav>
+            <div class="container">
+                <div class="logo">SHELBY.QA</div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">EXPERTISE</span>
-                <h2>Core Competencies</h2>
-                <p>A comprehensive toolkit for ensuring software quality across the entire development lifecycle</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🤖</div>
-                    <h3>Test Automation</h3>
-                    <p>Building scalable test suites with BDD/TDD that reduce regression time and improve release confidence</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Ruby</span>
-                        <span class="skill-tag">Cucumber/BDD</span>
-                        <span class="skill-tag">RSpec</span>
-                        <span class="skill-tag">FactoryBot</span>
-                        <span class="skill-tag">Selenium Grid</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🔄</div>
-                    <h3>CI/CD Integration</h3>
-                    <p>Integrating automated testing into CI/CD pipelines to catch defects early and accelerate delivery</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GitHub Actions</span>
-                        <span class="skill-tag">OIDC</span>
-                        <span class="skill-tag">Artifactory</span>
-                        <span class="skill-tag">CI/CD Pipelines</span>
-                        <span class="skill-tag">Docker</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">📱</div>
-                    <h3>Mobile Testing</h3>
-                    <p>Comprehensive testing strategies for iOS and Android applications</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">LambdaTest</span>
-                        <span class="skill-tag">Android</span>
-                        <span class="skill-tag">iOS</span>
-                        <span class="skill-tag">React Native</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🔍</div>
-                    <h3>API Testing</h3>
-                    <p>Validating REST APIs, backend services, and database integrity for reliable system integration</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">REST API Testing</span>
-                        <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">OAuth/JWT</span>
-                        <span class="skill-tag">Contract Testing</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">💻</div>
-                    <h3>Programming</h3>
-                    <p>Writing maintainable test automation code in Java, JavaScript, Python, and TypeScript</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Ruby</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">TypeScript</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">📊</div>
-                    <h3>Monitoring & Analytics</h3>
-                    <p>Monitoring production quality metrics and using data to drive continuous improvement</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Splunk SPL</span>
-                        <span class="skill-tag">CloudWatch</span>
-                        <span class="skill-tag">AWS ECS</span>
-                        <span class="skill-tag">Root Cause Analysis</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">👥</div>
-                    <h3>Leadership & Collaboration</h3>
-                    <p>Leading teams, mentoring, and driving continuous improvement</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Team Leadership</span>
-                        <span class="skill-tag">Mentoring</span>
-                        <span class="skill-tag">Agile/Scrum</span>
-                        <span class="skill-tag">Data Analysis</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🧠</div>
-                    <h3>AI-Assisted Quality Engineering</h3>
-                    <p>Using AI tools to accelerate test development, improve edge-case coverage, and reduce iteration time</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GitHub Copilot</span>
-                        <span class="skill-tag">ChatGPT</span>
-                        <span class="skill-tag">Claude</span>
-                        <span class="skill-tag">Test Ideation</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">PORTFOLIO</span>
-                <h2>Featured Projects</h2>
-                <p>Personal projects demonstrating technical skills and problem-solving</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">🗂️</div>
-                    <div class="project-content">
-                        <h3>Bash File Organizer</h3>
-                        <p>Automated file organization script that categorizes files by type using Bash scripting and custom functions. Built to improve workflow efficiency and demonstrate scripting fundamentals. Developed with AI-assisted debugging and edge-case validation.</p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">100%</span>
-                                <span class="metric-label">Automated</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">MIT</span>
-                                <span class="metric-label">Open Source</span>
-                            </div>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-tag"
+                        >SENIOR SOFTWARE DEVELOPMENT ENGINEER IN TEST</span
+                    >
+                    <h1>
+                        Building <span class="gradient-text">Bulletproof</span
+                        ><br />Software Systems
+                    </h1>
+                    <p>
+                        Senior Software Development Engineer in Test with 5+
+                        years building scalable API and browser automation,
+                        CI/CD workflows, and cloud diagnostics that reduce risk
+                        and accelerate delivery. Recent impact includes
+                        Ruby/Cucumber BDD framework ownership, GitHub Actions
+                        reusable workflow hardening, Selenium Grid stability
+                        improvements, and multi-service root cause analysis
+                        across AWS and Splunk.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-icon">🚀</span>
+                            <span class="stat-value">12+</span>
+                            <span class="stat-label">Major Releases</span>
                         </div>
-                        <div class="project-tech">
-                            <span class="skill-tag">Bash</span>
-                            <span class="skill-tag">Shell Scripting</span>
-                            <span class="skill-tag">Automation</span>
-                            <span class="skill-tag">File Systems</span>
+                        <div class="stat">
+                            <span class="stat-icon">📈</span>
+                            <span class="stat-value">90%</span>
+                            <span class="stat-label">Test Coverage</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">🎯</span>
+                            <span class="stat-value">80%</span>
+                            <span class="stat-label">Defects Reduced</span>
                         </div>
                     </div>
+                    <div class="cta-buttons">
+                        <a href="#experience" class="btn btn-primary"
+                            >View Experience</a
+                        >
+                        <a href="#contact" class="btn btn-secondary"
+                            >Get in Touch</a
+                        >
+                    </div>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">🏈</div>
-                    <div class="project-content">
-                        <h3>ProBet Sports</h3>
-                        <p>Sports betting web form built for automation testing practice. Features account creation, bet placement, real-time payout calculations, dynamic API-driven dropdowns, and comprehensive form validation. All elements include data-testid attributes for test automation.</p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">Full Stack</span>
-                                <span class="metric-label">Application</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">ISC</span>
-                                <span class="metric-label">Open Source</span>
-                            </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">EXPERTISE</span>
+                    <h2>Core Competencies</h2>
+                    <p>
+                        A comprehensive toolkit for ensuring software quality
+                        across the entire development lifecycle
+                    </p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">🤖</div>
+                        <h3>Test Automation</h3>
+                        <p>
+                            Building scalable test suites with BDD/TDD that
+                            reduce regression time and improve release
+                            confidence
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Ruby</span>
+                            <span class="skill-tag">Cucumber/BDD</span>
+                            <span class="skill-tag">RSpec</span>
+                            <span class="skill-tag">FactoryBot</span>
+                            <span class="skill-tag">Selenium Grid</span>
                         </div>
-                        <div class="project-tech">
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express</span>
-                            <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">🔄</div>
+                        <h3>CI/CD Integration</h3>
+                        <p>
+                            Integrating automated testing into CI/CD pipelines
+                            to catch defects early and accelerate delivery
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">OIDC</span>
+                            <span class="skill-tag">Artifactory</span>
+                            <span class="skill-tag">CI/CD Pipelines</span>
                             <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Test Automation</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">🤖</div>
-                    <div class="project-content">
-                        <h3>Quality Command Center</h3>
-                        <p>AI-assisted quality operating system for structured, reliable software testing. Features seven specialized AI agents for release readiness, production triage, compliance guardrails, metrics, exploratory testing, automation refactoring, and executive reporting. Built for high-stakes environments like healthcare SaaS.</p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">7 Agents</span>
-                                <span class="metric-label">AI-Powered QA</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">MIT</span>
-                                <span class="metric-label">Open Source</span>
-                            </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">📱</div>
+                        <h3>Mobile Testing</h3>
+                        <p>
+                            Comprehensive testing strategies for iOS and Android
+                            applications
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">LambdaTest</span>
+                            <span class="skill-tag">Android</span>
+                            <span class="skill-tag">iOS</span>
+                            <span class="skill-tag">React Native</span>
                         </div>
-                        <div class="project-tech">
-                            <span class="skill-tag">AI Engineering</span>
-                            <span class="skill-tag">Playwright</span>
-                            <span class="skill-tag">Cypress</span>
-                            <span class="skill-tag">CI/CD</span>
-                            <span class="skill-tag">Quality Strategy</span>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">🔍</div>
+                        <h3>API Testing</h3>
+                        <p>
+                            Validating REST APIs, backend services, and database
+                            integrity for reliable system integration
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">REST API Testing</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">OAuth/JWT</span>
+                            <span class="skill-tag">Contract Testing</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">💻</div>
+                        <h3>Programming</h3>
+                        <p>
+                            Writing maintainable test automation code in Java,
+                            JavaScript, Python, and TypeScript
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Ruby</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">TypeScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">📊</div>
+                        <h3>Monitoring & Analytics</h3>
+                        <p>
+                            Monitoring production quality metrics and using data
+                            to drive continuous improvement
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Splunk SPL</span>
+                            <span class="skill-tag">CloudWatch</span>
+                            <span class="skill-tag">AWS ECS</span>
+                            <span class="skill-tag">Root Cause Analysis</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">👥</div>
+                        <h3>Leadership & Collaboration</h3>
+                        <p>
+                            Leading teams, mentoring, and driving continuous
+                            improvement
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Team Leadership</span>
+                            <span class="skill-tag">Mentoring</span>
+                            <span class="skill-tag">Agile/Scrum</span>
+                            <span class="skill-tag">Data Analysis</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">🧠</div>
+                        <h3>AI-Assisted Quality Engineering</h3>
+                        <p>
+                            Using AI tools to accelerate test development,
+                            improve edge-case coverage, and reduce iteration
+                            time
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">GitHub Copilot</span>
+                            <span class="skill-tag">ChatGPT</span>
+                            <span class="skill-tag">Claude</span>
+                            <span class="skill-tag">Test Ideation</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">JOURNEY</span>
-                <h2>Professional Experience</h2>
-                <p>A track record of delivering quality across diverse industries</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">May 2026 - Present · 3 mos</span>
-                        <h3>Senior Software Development Engineer in Test</h3>
-                        <div class="timeline-company">Cox Automotive Inc. | Hybrid</div>
-                        <ul>
-                            <li>Built and maintained Ruby/Cucumber automation for AMS API and integration testing across QA and non-prod environments.</li>
-                            <li>Improved automation framework portability by moving AWS region and SSM configuration from hardcoded values to environment-driven setup.</li>
-                            <li>Strengthened test data reliability by replacing custom phone-number generation logic with standardized Faker-based data generation.</li>
-                            <li>Supported CI readiness by resolving RuboCop lint/style issues and improving automation configuration consistency.</li>
-                            <li class="highlight">Contributed to QA/Dev branch and merge workflows, delivering review-ready fixes tied to event publisher workflows, environment enablement, and test reliability.</li>
-                        </ul>
-                    </div>
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">PORTFOLIO</span>
+                    <h2>Featured Projects</h2>
+                    <p>
+                        Personal projects demonstrating technical skills and
+                        problem-solving
+                    </p>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Dec 2025 - May 2026 · 6 mos</span>
-                        <h3>Career Break</h3>
-                        <div class="timeline-company">Layoff / Position Eliminated</div>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <div class="project-image">🗂️</div>
+                        <div class="project-content">
+                            <h3>Bash File Organizer</h3>
+                            <p>
+                                Automated file organization script that
+                                categorizes files by type using Bash scripting
+                                and custom functions. Built to improve workflow
+                                efficiency and demonstrate scripting
+                                fundamentals. Developed with AI-assisted
+                                debugging and edge-case validation.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Automated</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">MIT</span>
+                                    <span class="metric-label"
+                                        >Open Source</span
+                                    >
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="skill-tag">Bash</span>
+                                <span class="skill-tag">Shell Scripting</span>
+                                <span class="skill-tag">Automation</span>
+                                <span class="skill-tag">File Systems</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Jan 2025 - Dec 2025</span>
-                        <h3>Senior Quality Assurance Engineer</h3>
-                        <div class="timeline-company">Boost | Atlanta, GA (Remote)</div>
-                        <ul>
-                            <li>Mentored 3 junior QA engineers, improving team test coverage by 40% and establishing quality best practices</li>
-                            <li>Designed and implemented QA onboarding program, reducing new hire ramp-up time from 4 weeks to 2 weeks</li>
-                            <li>Partnered with Engineering teams to streamline QA-Dev handoffs, reducing feature delivery cycle time by 30%</li>
-                            <li class="highlight">Created comprehensive test plans for 15+ high-impact features, reducing post-production incidents by 60%</li>
-                            <li class="highlight">Leveraged AI-assisted tools (GitHub Copilot, ChatGPT, Claude) to reduce test authoring time and improve early defect detection during regression and release validation</li>
-                        </ul>
+                    <div class="project-card fade-in">
+                        <div class="project-image">🏈</div>
+                        <div class="project-content">
+                            <h3>ProBet Sports</h3>
+                            <p>
+                                Sports betting web form built for automation
+                                testing practice. Features account creation, bet
+                                placement, real-time payout calculations,
+                                dynamic API-driven dropdowns, and comprehensive
+                                form validation. All elements include
+                                data-testid attributes for test automation.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">Full Stack</span>
+                                    <span class="metric-label"
+                                        >Application</span
+                                    >
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">ISC</span>
+                                    <span class="metric-label"
+                                        >Open Source</span
+                                    >
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Test Automation</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">May 2025 - Sept 2025</span>
-                        <h3>QA Lead (Temporary Assignment)</h3>
-                        <div class="timeline-company">Boost | Atlanta, GA (Remote)</div>
-                        <ul>
-                            <li>Directed end-to-end testing across major releases including regression and performance validation</li>
-                            <li>Defined test strategies aligned with business requirements ensuring full traceability</li>
-                            <li>Championed risk mitigation by identifying blockers during pre-release cycles</li>
-                            <li class="highlight">Delivered go/no-go recommendations through comprehensive QA reports</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Jun 2023 - Jun 2024</span>
-                        <h3>Jr. QA Engineer</h3>
-                        <div class="timeline-company">Repisodic | Philadelphia, PA</div>
-                        <ul>
-                            <li>Spearheaded regression testing for 12+ major SaaS releases in Agile environment</li>
-                            <li class="highlight">Architected test automation framework using TDD and BDD, reducing manual testing by 80%</li>
-                            <li>Achieved 90% test coverage increase through enhanced test strategy design</li>
-                            <li>Managed 50+ bugs through Jira resulting in 25 product improvements</li>
-                            <li>Reduced post-release issues by 80% through thorough testing reports</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Feb 2023 - Jun 2023</span>
-                        <h3>Quality Assurance Engineer</h3>
-                        <div class="timeline-company">Storable | Remote</div>
-                        <ul>
-                            <li>Pioneered first regression testing suite for SaaS applications</li>
-                            <li>Initiated test automation using Selenium reducing test cycle times by 80%</li>
-                            <li>Developed and tested mobile applications enhancing cross-platform compatibility</li>
-                            <li>Implemented version numbering system reducing bug resolution times by 80%</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Dec 2021 - Feb 2023</span>
-                        <h3>QA Automation Engineer</h3>
-                        <div class="timeline-company">Stellar Software | Atlanta, GA</div>
-                        <ul>
-                            <li>Orchestrated full-cycle testing enabling successful launch of 2+ products</li>
-                            <li>Validated 10+ new features and bug fixes with comprehensive test coverage</li>
-                            <li>Conducted mobile testing using LambdaTest across multiple devices</li>
-                            <li>Pioneered automated test practices reducing manual testing by 70%</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Jan 2019 - Nov 2019</span>
-                        <h3>Software Quality Assurance Tester</h3>
-                        <div class="timeline-company">Amethyst Pro Services | Atlanta, GA (Contract)</div>
-                        <ul>
-                            <li>Conducted regression test suite for new software and applications</li>
-                            <li>Led comprehensive training for offshore teams in manual testing and terminal testing</li>
-                            <li>Established maintenance protocols for regression test suites</li>
-                            <li>Ensured effective prevention and resolution of issues in new product releases</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Jan 2016 - Dec 2021</span>
-                        <h3>Shift Supervisor</h3>
-                        <div class="timeline-company">Starbucks | Atlanta, GA</div>
-                        <ul>
-                            <li>Directed operations for high-volume location with $25,000+ monthly sales</li>
-                            <li>Led performance management for 10+ team members, accelerating productivity by 85%</li>
-                            <li>Analyzed customer feedback data to identify trends and develop new policies</li>
-                            <li>Grew customer satisfaction by 75% through data-driven improvements</li>
-                        </ul>
+                    <div class="project-card fade-in">
+                        <div class="project-image">🤖</div>
+                        <div class="project-content">
+                            <h3>Quality Command Center</h3>
+                            <p>
+                                AI-assisted quality operating system for
+                                structured, reliable software testing. Features
+                                seven specialized AI agents for release
+                                readiness, production triage, compliance
+                                guardrails, metrics, exploratory testing,
+                                automation refactoring, and executive reporting.
+                                Built for high-stakes environments like
+                                healthcare SaaS.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">7 Agents</span>
+                                    <span class="metric-label"
+                                        >AI-Powered QA</span
+                                    >
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">MIT</span>
+                                    <span class="metric-label"
+                                        >Open Source</span
+                                    >
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="skill-tag">AI Engineering</span>
+                                <span class="skill-tag">Playwright</span>
+                                <span class="skill-tag">Cypress</span>
+                                <span class="skill-tag">CI/CD</span>
+                                <span class="skill-tag">Quality Strategy</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">EDUCATION</span>
-                <h2>Academic Background</h2>
-                <p>Continuous learning and professional development</p>
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">JOURNEY</span>
+                    <h2>Professional Experience</h2>
+                    <p>
+                        A track record of delivering quality across diverse
+                        industries
+                    </p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >May 2026 - Present · 3 mos</span
+                            >
+                            <h3>
+                                Senior Software Development Engineer in Test
+                            </h3>
+                            <div class="timeline-company">
+                                Cox Automotive Inc. | Hybrid
+                            </div>
+                            <ul>
+                                <li>
+                                    Built and maintained Ruby/Cucumber
+                                    automation for AMS API and integration
+                                    testing across QA and non-prod environments.
+                                </li>
+                                <li>
+                                    Improved automation framework portability by
+                                    moving AWS region and SSM configuration from
+                                    hardcoded values to environment-driven
+                                    setup.
+                                </li>
+                                <li>
+                                    Strengthened test data reliability by
+                                    replacing custom phone-number generation
+                                    logic with standardized Faker-based data
+                                    generation.
+                                </li>
+                                <li>
+                                    Supported CI readiness by resolving RuboCop
+                                    lint/style issues and improving automation
+                                    configuration consistency.
+                                </li>
+                                <li class="highlight">
+                                    Contributed to QA/Dev branch and merge
+                                    workflows, delivering review-ready fixes
+                                    tied to event publisher workflows,
+                                    environment enablement, and test
+                                    reliability.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >Dec 2025 - May 2026 · 6 mos</span
+                            >
+                            <h3>Career Break</h3>
+                            <div class="timeline-company">
+                                Layoff / Position Eliminated
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >Jan 2025 - Dec 2025</span
+                            >
+                            <h3>Senior Quality Assurance Engineer</h3>
+                            <div class="timeline-company">
+                                Boost | Atlanta, GA (Remote)
+                            </div>
+                            <ul>
+                                <li>
+                                    Mentored 3 junior QA engineers, improving
+                                    team test coverage by 40% and establishing
+                                    quality best practices
+                                </li>
+                                <li>
+                                    Designed and implemented QA onboarding
+                                    program, reducing new hire ramp-up time from
+                                    4 weeks to 2 weeks
+                                </li>
+                                <li>
+                                    Partnered with Engineering teams to
+                                    streamline QA-Dev handoffs, reducing feature
+                                    delivery cycle time by 30%
+                                </li>
+                                <li class="highlight">
+                                    Created comprehensive test plans for 15+
+                                    high-impact features, reducing
+                                    post-production incidents by 60%
+                                </li>
+                                <li class="highlight">
+                                    Leveraged AI-assisted tools (GitHub Copilot,
+                                    ChatGPT, Claude) to reduce test authoring
+                                    time and improve early defect detection
+                                    during regression and release validation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >May 2025 - Sept 2025</span
+                            >
+                            <h3>QA Lead (Temporary Assignment)</h3>
+                            <div class="timeline-company">
+                                Boost | Atlanta, GA (Remote)
+                            </div>
+                            <ul>
+                                <li>
+                                    Directed end-to-end testing across major
+                                    releases including regression and
+                                    performance validation
+                                </li>
+                                <li>
+                                    Defined test strategies aligned with
+                                    business requirements ensuring full
+                                    traceability
+                                </li>
+                                <li>
+                                    Championed risk mitigation by identifying
+                                    blockers during pre-release cycles
+                                </li>
+                                <li class="highlight">
+                                    Delivered go/no-go recommendations through
+                                    comprehensive QA reports
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >Jun 2023 - Jun 2024</span
+                            >
+                            <h3>Jr. QA Engineer</h3>
+                            <div class="timeline-company">
+                                Repisodic | Philadelphia, PA
+                            </div>
+                            <ul>
+                                <li>
+                                    Spearheaded regression testing for 12+ major
+                                    SaaS releases in Agile environment
+                                </li>
+                                <li class="highlight">
+                                    Architected test automation framework using
+                                    TDD and BDD, reducing manual testing by 80%
+                                </li>
+                                <li>
+                                    Achieved 90% test coverage increase through
+                                    enhanced test strategy design
+                                </li>
+                                <li>
+                                    Managed 50+ bugs through Jira resulting in
+                                    25 product improvements
+                                </li>
+                                <li>
+                                    Reduced post-release issues by 80% through
+                                    thorough testing reports
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >Feb 2023 - Jun 2023</span
+                            >
+                            <h3>Quality Assurance Engineer</h3>
+                            <div class="timeline-company">
+                                Storable | Remote
+                            </div>
+                            <ul>
+                                <li>
+                                    Pioneered first regression testing suite for
+                                    SaaS applications
+                                </li>
+                                <li>
+                                    Initiated test automation using Selenium
+                                    reducing test cycle times by 80%
+                                </li>
+                                <li>
+                                    Developed and tested mobile applications
+                                    enhancing cross-platform compatibility
+                                </li>
+                                <li>
+                                    Implemented version numbering system
+                                    reducing bug resolution times by 80%
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >Dec 2021 - Feb 2023</span
+                            >
+                            <h3>QA Automation Engineer</h3>
+                            <div class="timeline-company">
+                                Stellar Software | Atlanta, GA
+                            </div>
+                            <ul>
+                                <li>
+                                    Orchestrated full-cycle testing enabling
+                                    successful launch of 2+ products
+                                </li>
+                                <li>
+                                    Validated 10+ new features and bug fixes
+                                    with comprehensive test coverage
+                                </li>
+                                <li>
+                                    Conducted mobile testing using LambdaTest
+                                    across multiple devices
+                                </li>
+                                <li>
+                                    Pioneered automated test practices reducing
+                                    manual testing by 70%
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >Jan 2019 - Nov 2019</span
+                            >
+                            <h3>Software Quality Assurance Tester</h3>
+                            <div class="timeline-company">
+                                Amethyst Pro Services | Atlanta, GA (Contract)
+                            </div>
+                            <ul>
+                                <li>
+                                    Conducted regression test suite for new
+                                    software and applications
+                                </li>
+                                <li>
+                                    Led comprehensive training for offshore
+                                    teams in manual testing and terminal testing
+                                </li>
+                                <li>
+                                    Established maintenance protocols for
+                                    regression test suites
+                                </li>
+                                <li>
+                                    Ensured effective prevention and resolution
+                                    of issues in new product releases
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                >Jan 2016 - Dec 2021</span
+                            >
+                            <h3>Shift Supervisor</h3>
+                            <div class="timeline-company">
+                                Starbucks | Atlanta, GA
+                            </div>
+                            <ul>
+                                <li>
+                                    Directed operations for high-volume location
+                                    with $25,000+ monthly sales
+                                </li>
+                                <li>
+                                    Led performance management for 10+ team
+                                    members, accelerating productivity by 85%
+                                </li>
+                                <li>
+                                    Analyzed customer feedback data to identify
+                                    trends and develop new policies
+                                </li>
+                                <li>
+                                    Grew customer satisfaction by 75% through
+                                    data-driven improvements
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2021</span>
-                        <h3>Java and React Native Certificate</h3>
-                        <div class="timeline-company">Southern Methodist University</div>
-                        <ul>
-                            <li>Advanced programming in Java and React Native</li>
-                            <li>Mobile application development</li>
-                            <li>Agile methodologies and cross-team collaboration</li>
-                        </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">EDUCATION</span>
+                    <h2>Academic Background</h2>
+                    <p>Continuous learning and professional development</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2021</span>
+                            <h3>Java and React Native Certificate</h3>
+                            <div class="timeline-company">
+                                Southern Methodist University
+                            </div>
+                            <ul>
+                                <li>
+                                    Advanced programming in Java and React
+                                    Native
+                                </li>
+                                <li>Mobile application development</li>
+                                <li>
+                                    Agile methodologies and cross-team
+                                    collaboration
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020 - 2021</span>
+                            <h3>Computer Science Certificate</h3>
+                            <div class="timeline-company">
+                                Georgia Institute of Technology
+                            </div>
+                            <ul>
+                                <li>Full Stack Web Development</li>
+                                <li>Grade: 4.0 GPA</li>
+                                <li>Behavior-Driven Development (BDD)</li>
+                                <li>
+                                    Technical documentation and Agile practices
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2010 - 2015</span>
+                            <h3>Bachelor of Fine Arts (BFA)</h3>
+                            <div class="timeline-company">
+                                The Art Institute of Atlanta
+                            </div>
+                            <ul>
+                                <li>Major: Graphic Design</li>
+                                <li>
+                                    Visual design and creative problem-solving
+                                </li>
+                                <li>User experience fundamentals</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2020 - 2021</span>
-                        <h3>Computer Science Certificate</h3>
-                        <div class="timeline-company">Georgia Institute of Technology</div>
-                        <ul>
-                            <li>Full Stack Web Development</li>
-                            <li>Grade: 4.0 GPA</li>
-                            <li>Behavior-Driven Development (BDD)</li>
-                            <li>Technical documentation and Agile practices</li>
-                        </ul>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Volunteer Section -->
+        <section id="volunteer" class="volunteer-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">COMMUNITY</span>
+                    <h2>Volunteer Experience</h2>
+                    <p>Giving back through arts and culture</p>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2010 - 2015</span>
-                        <h3>Bachelor of Fine Arts (BFA)</h3>
-                        <div class="timeline-company">The Art Institute of Atlanta</div>
-                        <ul>
-                            <li>Major: Graphic Design</li>
-                            <li>Visual design and creative problem-solving</li>
-                            <li>User experience fundamentals</li>
+                <div class="volunteer-content-wrap">
+                    <div class="skill-card fade-in">
+                        <span class="timeline-date volunteer-date"
+                            >Mar 2010 - Dec 2025 · 15 years</span
+                        >
+                        <h3>Guest Relations Specialist</h3>
+                        <div class="timeline-company volunteer-company">
+                            MomoCon LLC | Arts and Culture
+                        </div>
+                        <ul class="volunteer-list">
+                            <li class="volunteer-list-item">
+                                <span class="volunteer-check">✓</span>
+                                15+ years of ongoing dedicated service to arts
+                                and culture community
+                            </li>
+                            <li class="volunteer-list-item">
+                                <span class="volunteer-check">✓</span>
+                                Currently providing exceptional guest experience
+                                at major convention events
+                            </li>
+                            <li class="volunteer-list-item">
+                                <span class="volunteer-check">✓</span>
+                                Demonstrate long-term commitment and reliability
+                            </li>
+                            <li
+                                class="volunteer-list-item volunteer-list-item-last"
+                            >
+                                <span class="volunteer-check">✓</span>
+                                Customer service excellence in high-volume
+                                environments
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Volunteer Section -->
     <section id="volunteer" class="volunteer-section">
@@ -570,79 +924,129 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">CONNECT</span>
-                <h2>Let's Build Quality Together</h2>
-                <p>Open to opportunities, collaborations, and quality discussions</p>
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">CONNECT</span>
+                    <h2>Let's Build Quality Together</h2>
+                    <p>
+                        Open to opportunities, collaborations, and quality
+                        discussions
+                    </p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <a href="mailto:shelbycignetti@gmail.com"
+                            >shelbycignetti@gmail.com</a
+                        >
+                    </div>
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <a
+                            href="https://www.linkedin.com/in/shelbycignetti/"
+                            target="_blank"
+                            >linkedin.com/in/shelbycignetti</a
+                        >
+                    </div>
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">🐙</div>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/shelb-doc" target="_blank"
+                            >github.com/shelb-doc</a
+                        >
+                    </div>
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📍</div>
+                        <h3>Location</h3>
+                        <p class="contact-location-primary">Atlanta, GA</p>
+                        <p class="contact-location-secondary">(678) 680-8638</p>
+                    </div>
+                </div>
             </div>
-            <div class="contact-grid">
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <a href="mailto:shelbycignetti@gmail.com">shelbycignetti@gmail.com</a>
-                </div>
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">💼</div>
-                    <h3>LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/shelbycignetti/" target="_blank">linkedin.com/in/shelbycignetti</a>
-                </div>
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">🐙</div>
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/shelb-doc" target="_blank">github.com/shelb-doc</a>
-                </div>
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📍</div>
-                    <h3>Location</h3>
-                    <p class="contact-location">Atlanta, GA</p>
-                    <p class="contact-phone">(678) 680-8638</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Rubber Duck Easter Egg -->
-    <div id="rubberDuck" class="rubber-duck" title="Click me for debugging wisdom!">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="340 420 90 95" class="rubber-duck-svg">
-            <style type="text/css">
-                .st0{fill:#FFDE76;}
-                .st1{fill:#FFB641;}
-                .st2{fill:#38484A;}
-            </style>
-            <g>
-                <path class="st0" d="M379.9,511.8h12.3c34.8,0,34.5-27.8,32.7-40.3c-0.5-3.4-3.4-6-6.9-6l0,0c-1.4,0-2.7,0.4-3.9,1.2
-                    c-10.5,7-15.5,5.4-17.8,2.8c-1.5-1.7-1.6-4.2-0.3-6c3.1-4.2,5-9.4,5-15.1c0-14-11.2-25.3-25.1-25.5c-14.1-0.2-25.7,11.3-25.8,25.4
-                    c0,4.4,1.1,8.6,3.1,12.2c0.6,1.2,0.6,2.6-0.2,3.7C338.6,484,347.3,511.8,379.9,511.8z"/>
+        <!-- Rubber Duck Easter Egg -->
+        <div
+            id="rubberDuck"
+            class="rubber-duck"
+            title="Click me for debugging wisdom!"
+            role="button"
+            tabindex="0"
+            aria-label="Rubber duck - click for debugging wisdom"
+        >
+            <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="340 420 90 95"
+                class="rubber-duck-svg"
+            >
+                <style type="text/css">
+                    .st0 {
+                        fill: #ffde76;
+                    }
+                    .st1 {
+                        fill: #ffb641;
+                    }
+                    .st2 {
+                        fill: #38484a;
+                    }
+                </style>
                 <g>
-                    <path class="st1" d="M396,463.5c3.1-4.2,5-9.4,5-15.1c0-14-11.2-25.3-25.1-25.5c-1,0-2,0-3,0.1c12.8,1.3,22.8,12.2,22.8,25.3
+                    <path
+                        class="st0"
+                        d="M379.9,511.8h12.3c34.8,0,34.5-27.8,32.7-40.3c-0.5-3.4-3.4-6-6.9-6l0,0c-1.4,0-2.7,0.4-3.9,1.2
+                    c-10.5,7-15.5,5.4-17.8,2.8c-1.5-1.7-1.6-4.2-0.3-6c3.1-4.2,5-9.4,5-15.1c0-14-11.2-25.3-25.1-25.5c-14.1-0.2-25.7,11.3-25.8,25.4
+                    c0,4.4,1.1,8.6,3.1,12.2c0.6,1.2,0.6,2.6-0.2,3.7C338.6,484,347.3,511.8,379.9,511.8z"
+                    />
+                    <g>
+                        <path
+                            class="st1"
+                            d="M396,463.5c3.1-4.2,5-9.4,5-15.1c0-14-11.2-25.3-25.1-25.5c-1,0-2,0-3,0.1c12.8,1.3,22.8,12.2,22.8,25.3
                         c0,5.6-1.8,10.9-5,15.1c-1.3,1.8-1.3,4.4,0.3,6c1.4,1.6,3.9,2.9,8.2,1.8c-1.2-0.4-2.1-1.1-2.8-1.8
-                        C394.8,467.9,394.7,465.4,396,463.5z"/>
-                    <path class="st1" d="M386.9,511.8h5.4c34.8,0,34.5-27.8,32.7-40.3c-0.5-3.4-3.4-6-6.9-6l0,0c-0.9,0-1.8,0.2-2.7,0.5
-                        c2.2,0.9,3.8,2.9,4.2,5.4C421.4,484,421.6,511.8,386.9,511.8z"/>
-                    <path class="st1" d="M408.1,481.5c-4.7-0.5-9.2-1.7-13.5-3.7c-6-2.9-10.2-9-17.3-9.3c-9.7-0.4-14.7,9.9-13.1,18.4
-                        c2,10.3,12.5,16.5,22.4,16.5c16.3,0,24.8-9.7,28.2-15c1.2-1.8,0.9-4.2-0.6-5.7C412.4,481,410.3,481.7,408.1,481.5z"/>
-                </g>
-                <path class="st2" d="M360.4,442.2c-0.7-0.2-1.2-0.9-1-1.6l0.6-2.7c0.2-0.7,0.9-1.2,1.6-1s1.2,0.9,1,1.6l-0.6,2.7
-                    c-0.1,0.6-0.7,1-1.3,1C360.6,442.2,360.5,442.2,360.4,442.2z"/>
-                <path class="st1" d="M347.2,433.4c-1.2-0.8-2.9-0.3-3.3,1.2c-1.1,4.4,3.3,8.3,3.3,8.3c-1.3-0.2-2.4,0-3.2,0.2
+                        C394.8,467.9,394.7,465.4,396,463.5z"
+                        />
+                        <path
+                            class="st1"
+                            d="M386.9,511.8h5.4c34.8,0,34.5-27.8,32.7-40.3c-0.5-3.4-3.4-6-6.9-6l0,0c-0.9,0-1.8,0.2-2.7,0.5
+                        c2.2,0.9,3.8,2.9,4.2,5.4C421.4,484,421.6,511.8,386.9,511.8z"
+                        />
+                        <path
+                            class="st1"
+                            d="M408.1,481.5c-4.7-0.5-9.2-1.7-13.5-3.7c-6-2.9-10.2-9-17.3-9.3c-9.7-0.4-14.7,9.9-13.1,18.4
+                        c2,10.3,12.5,16.5,22.4,16.5c16.3,0,24.8-9.7,28.2-15c1.2-1.8,0.9-4.2-0.6-5.7C412.4,481,410.3,481.7,408.1,481.5z"
+                        />
+                    </g>
+                    <path
+                        class="st2"
+                        d="M360.4,442.2c-0.7-0.2-1.2-0.9-1-1.6l0.6-2.7c0.2-0.7,0.9-1.2,1.6-1s1.2,0.9,1,1.6l-0.6,2.7
+                    c-0.1,0.6-0.7,1-1.3,1C360.6,442.2,360.5,442.2,360.4,442.2z"
+                    />
+                    <path
+                        class="st1"
+                        d="M347.2,433.4c-1.2-0.8-2.9-0.3-3.3,1.2c-1.1,4.4,3.3,8.3,3.3,8.3c-1.3-0.2-2.4,0-3.2,0.2
                     c-1.3,0.4-2.2,1.6-2.2,2.9l0,0c0,1.4,0.9,2.6,2.3,3c1,0.3,2.1,0.8,3.2,1.5c7.3,5.3,13.4-0.3,9.7-3.9c-3.7-3.6-3.1-11.6-3.1-11.6
-                    C351.2,435.6,348.8,434.4,347.2,433.4z"/>
-            </g>
-        </svg>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Shelby Cignetti. Built with precision and attention to detail.</p>
+                    C351.2,435.6,348.8,434.4,347.2,433.4z"
+                    />
+                </g>
+            </svg>
         </div>
-    </footer>
-    <!-- Scripts --> 
-    <script src="js/navigation.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/duck.js"></script>
-</body>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>
+                    &copy; 2024 Shelby Cignetti. Built with precision and
+                    attention to detail.
+                </p>
+            </div>
+        </footer>
+        <!-- Scripts -->
+        <script src="js/navigation.js"></script>
+        <script src="js/animations.js"></script>
+        <script src="js/duck.js"></script>
+    </body>
 </html>
