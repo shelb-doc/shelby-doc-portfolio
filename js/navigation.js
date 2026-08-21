@@ -3,10 +3,17 @@
  * Handles smooth scrolling and active link highlighting
  */
 
+const initializedDocuments = new WeakSet();
+
 function initNavigation(doc = document, win = window) {
   if (!doc || !win || !doc.body) {
     return;
   }
+
+  if (initializedDocuments.has(doc)) {
+    return;
+  }
+  initializedDocuments.add(doc);
 
   const navLinks = Array.from(doc.querySelectorAll("nav a"));
   const sectionIds = navLinks

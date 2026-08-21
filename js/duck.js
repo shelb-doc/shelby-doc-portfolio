@@ -65,6 +65,10 @@ function playQuack(win = window) {
 
 // Show quack text
 function showQuackText(doc = document) {
+  if (!doc || !doc.body) {
+    return;
+  }
+
   const quackText = doc.createElement("div");
   quackText.className = "duck-quack-text";
   quackText.textContent = "QUACK!";
@@ -110,6 +114,13 @@ function initDuck(doc = document, win = window) {
     animationResetTimer = setTimeout(() => {
       duck.classList.remove("duck--bouncing", "duck--spinning");
     }, 1000);
+  });
+
+  duck.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      duck.click();
+    }
   });
 
   duck.addEventListener("mouseenter", function () {
