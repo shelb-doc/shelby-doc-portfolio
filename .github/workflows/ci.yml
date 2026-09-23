@@ -87,7 +87,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
         publish_branch: gh-pages
-        exclude_assets: '.github,node_modules,__tests__,coverage,.git,src,docs,scripts'
+        exclude_assets: '.github,node_modules,__tests__,coverage,src,docs,scripts'
 
   lighthouse:
     name: Lighthouse Performance Audit
@@ -116,7 +116,7 @@ jobs:
       with:
         urls: |
           http://127.0.0.1:8080
-        uploadArtifacts: true
+        uploadArtifacts: false
         temporaryPublicStorage: true
 
   security:
