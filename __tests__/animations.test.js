@@ -123,6 +123,11 @@ describe("Scroll Animations and Observers", () => {
   });
 
   test("initAnimations exits when IntersectionObserver is unavailable", () => {
+    const html = fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf8");
+    const testDocument = document.implementation.createHTMLDocument("test");
+    testDocument.body.innerHTML = html;
+
+    jest.resetModules();
     const { initAnimations } = require("../js/animations");
     const originalWindowObserver = window.IntersectionObserver;
     const originalGlobalObserver = global.IntersectionObserver;
@@ -130,7 +135,12 @@ describe("Scroll Animations and Observers", () => {
     window.IntersectionObserver = undefined;
     global.IntersectionObserver = undefined;
 
-    expect(() => initAnimations(document, window)).not.toThrow();
+    expect(() => initAnimations(testDocument, window)).not.toThrow();
+    const fadeInElements = testDocument.querySelectorAll(".fade-in");
+    expect(fadeInElements.length).toBeGreaterThan(0);
+    fadeInElements.forEach((element) => {
+      expect(element.classList.contains("visible")).toBe(true);
+    });
 
     window.IntersectionObserver = originalWindowObserver;
     global.IntersectionObserver = originalGlobalObserver;

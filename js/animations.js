@@ -22,6 +22,9 @@ function initAnimations(doc = document, win = window) {
       : undefined);
 
   if (typeof IntersectionObserverConstructor === "undefined") {
+    doc.querySelectorAll(".fade-in").forEach((element) => {
+      element.classList.add("visible");
+    });
     return;
   }
 
