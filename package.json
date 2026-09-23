@@ -5,6 +5,7 @@
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
+    "test:visual": "node scripts/visual-test.js",
     "lint": "eslint \"js/**/*.js\" \"__tests__/**/*.js\"",
     "serve": "http-server . -p 8080"
   },
@@ -23,7 +24,8 @@
     "globals": "^17.12.0",
     "http-server": "^14.1.1",
     "jest": "^30.5.2",
-    "jest-environment-jsdom": "^30.5.2"
+    "jest-environment-jsdom": "^30.5.2",
+    "playwright": "^1.63.0"
   },
   "overrides": {
     "follow-redirects": "^1.15.12",
