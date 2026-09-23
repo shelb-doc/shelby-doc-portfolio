@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shelb-doc.github.io/shelby-doc-portfolio/sitemap.xml
