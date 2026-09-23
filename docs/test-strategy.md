@@ -38,10 +38,16 @@ While our current setup focuses on unit tests, future integration tests will ver
 
 ### 3. Visual Regression Testing
 
-**Future Implementation**:
-- Screenshot comparisons using Playwright or Percy
-- Cross-browser visual consistency
-- Responsive design validation
+The repository includes a Playwright visual smoke test for desktop and mobile
+layouts. It captures screenshots in the ignored `visual-artifacts/` directory
+and validates that the hero-to-skills boundary is aligned and that the page has
+no horizontal overflow.
+
+```bash
+npm run test:visual
+```
+
+Cross-browser pixel comparisons remain future work.
 
 ## Test Framework
 
