@@ -1,119 +1,118 @@
 /**
  * Portfolio Styles
  * Shelby Cignetti - QA Engineer Portfolio
- * Dreamy purple theme with glassmorphism effects
+ * Spooky fall theme with glassmorphism effects
  */
 
 /* ========================================
    CSS Variables & Theme Colors
    ======================================== */
 :root {
-    color-scheme: light;
-    --bg-primary: #e8d7f1;
-    --bg-secondary: #d4b5e3;
-    --bg-tertiary: #c9a8db;
-    --accent-blue: #9b7ab8;
-    --accent-cyan: #b999d4;
-    --accent-purple: #c298dc;
-    --text-primary: #4a2c5c;
-    --text-secondary: #6b4a7d;
-    --text-tertiary: #8e6ba8;
-    --success: #10b981;
-    --warning: #f59e0b;
-    --error: #ef4444;
+    color-scheme: dark;
+    --bg-primary: #120913;
+    --bg-secondary: #1b1020;
+    --bg-tertiary: #27142a;
+    --accent-blue: #f97316;
+    --accent-cyan: #fb923c;
+    --accent-purple: #c084fc;
+    --text-primary: #f8f1ff;
+    --text-secondary: #dbc7ea;
+    --text-tertiary: #bda6cf;
+    --success: #7dd3a6;
+    --warning: #fbbf24;
+    --error: #fb7185;
 
-    /* New dreamy theme colors */
-    --lavender-light: #e8d7f1;
-    --lavender-mid: #d4b5e3;
-    --purple-soft: #b999d4;
-    --purple-medium: #9b7ab8;
-    --purple-dark: #7a5a96;
-    --text-on-accent: #ffffff;
+    --lavender-light: #31203b;
+    --lavender-mid: #41254f;
+    --purple-soft: #d8b4fe;
+    --purple-medium: #f97316;
+    --purple-dark: #fef2f2;
+    --text-on-accent: #140c15;
 
-    --nav-bg: rgba(232, 215, 241, 0.95);
-    --nav-border: rgba(155, 122, 184, 0.2);
-    --nav-shadow: rgba(155, 122, 184, 0.1);
-    --hero-radial-1: rgba(185, 153, 212, 0.3);
-    --hero-radial-2: rgba(194, 152, 220, 0.3);
-    --hero-tag-bg: rgba(155, 122, 184, 0.2);
-    --hero-tag-border: rgba(155, 122, 184, 0.4);
-    --btn-secondary-bg: rgba(212, 181, 227, 0.5);
-    --btn-secondary-bg-hover: rgba(212, 181, 227, 0.8);
-    --section-tag-bg: rgba(194, 152, 220, 0.3);
-    --section-tag-border: rgba(194, 152, 220, 0.5);
-    --surface: rgba(255, 255, 255, 0.6);
-    --surface-hover: rgba(255, 255, 255, 0.8);
-    --surface-border: rgba(155, 122, 184, 0.3);
-    --surface-shadow: rgba(155, 122, 184, 0.2);
-    --icon-gradient-start: rgba(155, 122, 184, 0.15);
-    --icon-gradient-end: rgba(185, 153, 212, 0.15);
-    --icon-shadow: rgba(155, 122, 184, 0.2);
-    --icon-shadow-hover: rgba(155, 122, 184, 0.35);
-    --icon-hover-gradient-start: rgba(155, 122, 184, 0.25);
-    --icon-hover-gradient-end: rgba(185, 153, 212, 0.25);
-    --tech-tag-bg: rgba(185, 153, 212, 0.2);
-    --project-image-gradient-start: rgba(212, 181, 227, 0.5);
-    --project-image-gradient-end: rgba(185, 153, 212, 0.5);
-    --project-image-border: rgba(155, 122, 184, 0.2);
-    --stripe-color: rgba(168, 85, 247, 0.03);
-    --metrics-bg: rgba(232, 215, 241, 0.5);
+    --nav-bg: rgba(18, 9, 19, 0.9);
+    --nav-border: rgba(251, 146, 60, 0.2);
+    --nav-shadow: rgba(0, 0, 0, 0.35);
+    --hero-radial-1: rgba(249, 115, 22, 0.22);
+    --hero-radial-2: rgba(192, 132, 252, 0.18);
+    --hero-tag-bg: rgba(249, 115, 22, 0.14);
+    --hero-tag-border: rgba(251, 146, 60, 0.4);
+    --btn-secondary-bg: rgba(49, 32, 59, 0.72);
+    --btn-secondary-bg-hover: rgba(65, 37, 79, 0.92);
+    --section-tag-bg: rgba(192, 132, 252, 0.14);
+    --section-tag-border: rgba(216, 180, 254, 0.28);
+    --surface: rgba(37, 21, 39, 0.82);
+    --surface-hover: rgba(49, 29, 53, 0.95);
+    --surface-border: rgba(216, 180, 254, 0.2);
+    --surface-shadow: rgba(0, 0, 0, 0.35);
+    --icon-gradient-start: rgba(249, 115, 22, 0.14);
+    --icon-gradient-end: rgba(192, 132, 252, 0.14);
+    --icon-shadow: rgba(0, 0, 0, 0.28);
+    --icon-shadow-hover: rgba(0, 0, 0, 0.4);
+    --icon-hover-gradient-start: rgba(249, 115, 22, 0.24);
+    --icon-hover-gradient-end: rgba(192, 132, 252, 0.24);
+    --tech-tag-bg: rgba(192, 132, 252, 0.15);
+    --project-image-gradient-start: rgba(249, 115, 22, 0.18);
+    --project-image-gradient-end: rgba(124, 58, 237, 0.22);
+    --project-image-border: rgba(251, 146, 60, 0.18);
+    --stripe-color: rgba(251, 146, 60, 0.08);
+    --metrics-bg: rgba(42, 24, 44, 0.75);
     --timeline-dot-border: var(--bg-primary);
-    --timeline-dot-shadow: rgba(155, 122, 184, 0.6);
-    --highlight-gradient: rgba(155, 122, 184, 0.08);
-    --contact-icon-gradient-start: rgba(168, 85, 247, 0.2);
-    --contact-icon-gradient-end: rgba(192, 132, 252, 0.2);
-    --footer-border: rgba(155, 122, 184, 0.2);
+    --timeline-dot-shadow: rgba(249, 115, 22, 0.4);
+    --highlight-gradient: rgba(249, 115, 22, 0.12);
+    --contact-icon-gradient-start: rgba(249, 115, 22, 0.18);
+    --contact-icon-gradient-end: rgba(192, 132, 252, 0.18);
+    --footer-border: rgba(251, 146, 60, 0.16);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         color-scheme: dark;
-        --bg-primary: #120d1c;
-        --bg-secondary: #1b1328;
-        --bg-tertiary: #241937;
-        --accent-blue: #c9a8db;
-        --accent-cyan: #d8b8ea;
-        --accent-purple: #b999d4;
-        --text-primary: #f3e7fb;
-        --text-secondary: #dac8e8;
-        --text-tertiary: #b99fcf;
-        --purple-soft: #d7bceb;
-        --purple-medium: #c9a8db;
-        --purple-dark: #e8d7f1;
+        --bg-primary: #0d0710;
+        --bg-secondary: #160c1a;
+        --bg-tertiary: #241028;
+        --accent-blue: #fb923c;
+        --accent-cyan: #fdba74;
+        --accent-purple: #d8b4fe;
+        --text-primary: #fbf6ff;
+        --text-secondary: #e7d8f4;
+        --text-tertiary: #c7b2d8;
+        --purple-soft: #e9d5ff;
+        --purple-medium: #fb923c;
+        --purple-dark: #fff7ed;
 
-        --nav-bg: rgba(18, 13, 28, 0.9);
-        --nav-border: rgba(216, 184, 234, 0.24);
+        --nav-bg: rgba(13, 7, 16, 0.92);
+        --nav-border: rgba(251, 146, 60, 0.24);
         --nav-shadow: rgba(0, 0, 0, 0.4);
-        --hero-radial-1: rgba(155, 122, 184, 0.3);
-        --hero-radial-2: rgba(124, 91, 155, 0.3);
-        --hero-tag-bg: rgba(216, 184, 234, 0.2);
-        --hero-tag-border: rgba(216, 184, 234, 0.45);
-        --btn-secondary-bg: rgba(92, 66, 125, 0.45);
-        --btn-secondary-bg-hover: rgba(112, 81, 149, 0.6);
-        --section-tag-bg: rgba(155, 122, 184, 0.3);
-        --section-tag-border: rgba(216, 184, 234, 0.45);
-        --surface: rgba(38, 28, 56, 0.72);
-        --surface-hover: rgba(53, 40, 75, 0.86);
-        --surface-border: rgba(216, 184, 234, 0.3);
+        --hero-radial-1: rgba(249, 115, 22, 0.26);
+        --hero-radial-2: rgba(124, 58, 237, 0.24);
+        --hero-tag-bg: rgba(251, 146, 60, 0.18);
+        --hero-tag-border: rgba(251, 146, 60, 0.4);
+        --btn-secondary-bg: rgba(55, 31, 59, 0.6);
+        --btn-secondary-bg-hover: rgba(74, 40, 82, 0.82);
+        --section-tag-bg: rgba(192, 132, 252, 0.18);
+        --section-tag-border: rgba(216, 180, 254, 0.36);
+        --surface: rgba(29, 15, 33, 0.82);
+        --surface-hover: rgba(45, 23, 50, 0.95);
+        --surface-border: rgba(216, 180, 254, 0.24);
         --surface-shadow: rgba(0, 0, 0, 0.35);
-        --icon-gradient-start: rgba(216, 184, 234, 0.2);
-        --icon-gradient-end: rgba(155, 122, 184, 0.2);
+        --icon-gradient-start: rgba(249, 115, 22, 0.18);
+        --icon-gradient-end: rgba(192, 132, 252, 0.18);
         --icon-shadow: rgba(0, 0, 0, 0.3);
         --icon-shadow-hover: rgba(0, 0, 0, 0.45);
-        --icon-hover-gradient-start: rgba(216, 184, 234, 0.3);
-        --icon-hover-gradient-end: rgba(155, 122, 184, 0.3);
-        --tech-tag-bg: rgba(155, 122, 184, 0.22);
-        --project-image-gradient-start: rgba(92, 66, 125, 0.5);
-        --project-image-gradient-end: rgba(124, 91, 155, 0.5);
-        --project-image-border: rgba(216, 184, 234, 0.22);
-        --stripe-color: rgba(216, 184, 234, 0.1);
-        --metrics-bg: rgba(58, 42, 81, 0.5);
-        --timeline-dot-border: #120d1c;
-        --timeline-dot-shadow: rgba(0, 0, 0, 0.45);
-        --highlight-gradient: rgba(216, 184, 234, 0.16);
-        --contact-icon-gradient-start: rgba(216, 184, 234, 0.25);
-        --contact-icon-gradient-end: rgba(155, 122, 184, 0.25);
-        --footer-border: rgba(216, 184, 234, 0.24);
+        --icon-hover-gradient-start: rgba(249, 115, 22, 0.28);
+        --icon-hover-gradient-end: rgba(192, 132, 252, 0.28);
+        --tech-tag-bg: rgba(192, 132, 252, 0.18);
+        --project-image-gradient-start: rgba(249, 115, 22, 0.22);
+        --project-image-gradient-end: rgba(124, 58, 237, 0.26);
+        --project-image-border: rgba(251, 146, 60, 0.22);
+        --stripe-color: rgba(251, 146, 60, 0.1);
+        --metrics-bg: rgba(45, 23, 50, 0.72);
+        --timeline-dot-border: #0d0710;
+        --timeline-dot-shadow: rgba(249, 115, 22, 0.4);
+        --highlight-gradient: rgba(249, 115, 22, 0.14);
+        --contact-icon-gradient-start: rgba(249, 115, 22, 0.24);
+        --contact-icon-gradient-end: rgba(192, 132, 252, 0.24);
+        --footer-border: rgba(251, 146, 60, 0.2);
     }
 }
 
@@ -132,6 +131,25 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+    background-image:
+        radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(192, 132, 252, 0.14), transparent 28%),
+        linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 45%, #080509 100%);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 244, 214, 0.05), transparent 10%),
+        radial-gradient(circle at 82% 14%, rgba(249, 115, 22, 0.08), transparent 14%),
+        linear-gradient(135deg, transparent 0%, rgba(192, 132, 252, 0.03) 100%);
+    opacity: 0.9;
+    z-index: -1;
 }
 
 .container {
@@ -306,6 +324,20 @@ nav a.nav-link-active::after {
     animation: fadeInUp 1s ease-out 0.6s backwards;
 }
 
+.seasonal-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+    background: rgba(20, 12, 21, 0.68);
+    border: 1px solid var(--hero-tag-border);
+    border-radius: 14px;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
 .stats {
     display: flex;
     gap: 3rem;
@@ -362,12 +394,12 @@ nav a.nav-link-active::after {
 .btn-primary {
     background: linear-gradient(135deg, var(--purple-medium), var(--purple-soft));
     color: var(--text-on-accent);
-    box-shadow: 0 0 30px rgba(155, 122, 184, 0.4);
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.32);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 40px rgba(155, 122, 184, 0.6);
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.44);
 }
 
 .btn-secondary {
@@ -863,51 +895,6 @@ section {
 }
 
 /* ========================================
-   Volunteer Section
-   ======================================== */
-.volunteer-section {
-    padding: 4rem 0;
-}
-
-.volunteer-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.volunteer-date {
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.volunteer-company {
-    margin-bottom: 1.5rem;
-}
-
-.volunteer-list {
-    list-style: none;
-    padding: 0;
-}
-
-.volunteer-list li {
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--text-secondary);
-}
-
-.volunteer-list li:last-child {
-    margin-bottom: 0;
-}
-
-.volunteer-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--success);
-    font-weight: 700;
-}
-
-/* ========================================
    Contact Details
    ======================================== */
 .contact-location {
@@ -933,7 +920,7 @@ section {
     cursor: pointer;
     z-index: 9999;
     transition: all 0.3s ease;
-    filter: drop-shadow(0 4px 8px rgba(155, 122, 184, 0.4));
+    filter: drop-shadow(0 4px 8px rgba(249, 115, 22, 0.4));
 }
 
 .rubber-duck-svg {
