@@ -646,6 +646,38 @@ section {
     gap: 0.5rem;
 }
 
+.project-links {
+    display: flex;
+    margin-top: 1.25rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 999px;
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    background: var(--btn-secondary-bg);
+}
+
+.project-link:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 3px;
+}
+
 /* ========================================
    Experience Timeline
    ======================================== */
