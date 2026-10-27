@@ -60,6 +60,31 @@ describe("Navigation Functionality", () => {
     });
   });
 
+  test("reduced motion preference disables smooth scrolling", () => {
+    const navLink = document.querySelector('a[href="#skills"]');
+    const skillsSection = document.querySelector("#skills");
+    const originalMatchMedia = Object.getOwnPropertyDescriptor(
+      window,
+      "matchMedia",
+    );
+    window.matchMedia = jest.fn().mockReturnValue({ matches: true });
+
+    try {
+      navLink.click();
+
+      expect(skillsSection.scrollIntoView).toHaveBeenCalledWith({
+        behavior: "auto",
+        block: "start",
+      });
+    } finally {
+      if (originalMatchMedia) {
+        Object.defineProperty(window, "matchMedia", originalMatchMedia);
+      } else {
+        delete window.matchMedia;
+      }
+    }
+  });
+
   test("navigation link with invalid target does not throw error", () => {
     const invalidLink = document.createElement("a");
     invalidLink.setAttribute("href", "#nonexistent");
