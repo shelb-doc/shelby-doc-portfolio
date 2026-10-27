@@ -145,3 +145,25 @@ describe("Hiring highlights", () => {
     expect(skillCard).toHaveTextContent("no wizard claims yet");
   });
 });
+
+describe("Mobile browser metadata", () => {
+  let pageDocument;
+
+  beforeEach(() => {
+    const html = fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf8");
+    pageDocument = new DOMParser().parseFromString(html, "text/html");
+  });
+
+  test("declares standard and Apple standalone web app capabilities", () => {
+    expect(
+      pageDocument
+        .querySelector('meta[name="mobile-web-app-capable"]')
+        .getAttribute("content"),
+    ).toBe("yes");
+    expect(
+      pageDocument
+        .querySelector('meta[name="apple-mobile-web-app-capable"]')
+        .getAttribute("content"),
+    ).toBe("yes");
+  });
+});
