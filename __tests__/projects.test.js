@@ -127,4 +127,21 @@ describe("Hiring highlights", () => {
     expect(impact).toHaveTextContent("AWS region and SSM configuration");
     expect(impact).toHaveTextContent("standardized Faker data");
   });
+
+  test("performance testing and JWT skills are clearly marked as in progress", () => {
+    const skillCard = Array.from(
+      document.querySelectorAll("#skills .skill-card"),
+    ).find((card) =>
+      card.querySelector("h3")?.textContent.includes("Performance & JWT"),
+    );
+
+    expect(skillCard).toBeInTheDocument();
+    expect(skillCard).toHaveClass("skill-card-learning");
+    expect(skillCard).toHaveTextContent("Currently learning");
+    expect(skillCard).toHaveTextContent("Apache JMeter");
+    expect(skillCard).toHaveTextContent("Performance Testing");
+    expect(skillCard).toHaveTextContent("JWT Validation");
+    expect(skillCard).toHaveTextContent("API Authentication");
+    expect(skillCard).toHaveTextContent("no wizard claims yet");
+  });
 });

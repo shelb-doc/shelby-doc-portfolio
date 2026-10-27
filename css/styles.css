@@ -568,6 +568,24 @@ section:not(.hero):nth-of-type(even) {
     margin-bottom: 0.5rem;
 }
 
+.skill-card-learning {
+    border-color: rgba(201, 163, 90, 0.3);
+}
+
+.skill-card-learning::before {
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
+}
+
+.skill-status {
+    display: inline-flex;
+    margin-bottom: 0.6rem;
+    color: var(--accent-gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
 .skill-card p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
