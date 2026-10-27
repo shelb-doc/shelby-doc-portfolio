@@ -27,8 +27,11 @@ function initNavigation(doc = document, win = window) {
       e.preventDefault();
       const target = doc.querySelector(this.getAttribute("href"));
       if (target) {
+        const prefersReducedMotion =
+          typeof win.matchMedia === "function" &&
+          win.matchMedia("(prefers-reduced-motion: reduce)").matches;
         target.scrollIntoView({
-          behavior: "smooth",
+          behavior: prefersReducedMotion ? "auto" : "smooth",
           block: "start",
         });
       }
