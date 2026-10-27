@@ -3,17 +3,17 @@
  * Handles scroll-triggered fade-in animations using IntersectionObserver
  */
 
-const initializedDocuments = new WeakSet();
+const initializedAnimationDocuments = new WeakSet();
 
 function initAnimations(doc = document, win = window) {
   if (!doc || !win || !doc.body) {
     return;
   }
 
-  if (initializedDocuments.has(doc)) {
+  if (initializedAnimationDocuments.has(doc)) {
     return;
   }
-  initializedDocuments.add(doc);
+  initializedAnimationDocuments.add(doc);
 
   const IntersectionObserverConstructor =
     win.IntersectionObserver ||

@@ -8,7 +8,7 @@ A modern, interactive portfolio website showcasing my experience and skills as a
 
 ## 🌟 Features
 
-- **Dreamy Purple Aesthetic** - Soft lavender color scheme with glassmorphism effects
+- **Midnight Protocol Design** - Obsidian, deep plum, electric blue, and restrained gold
 - **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - **Interactive Elements** - Smooth animations and hover effects
 - **Easter Egg** - Interactive rubber duck debugging companion 🦆 (click the duck!)
@@ -32,7 +32,7 @@ A modern, interactive portfolio website showcasing my experience and skills as a
 
 ## 🎨 Design Philosophy
 
-The portfolio embraces a dreamy, professional aesthetic inspired by nighttime serenity. The soft purple and lavender tones create a calming yet memorable experience, while the glassmorphism effects add depth and modernity.
+The portfolio uses the Midnight Protocol design system: an obsidian foundation, deep-plum surfaces, electric-blue actions, and sparing muted-gold career highlights. Clear typography, restrained motion, and a dry sense of humor give the site a polished SDET identity without distracting from the work.
 
 ## 🚀 Live Demo
 
@@ -185,7 +185,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Design inspired by modern glassmorphism trends
+- Midnight Protocol design system for a polished, editorial dark aesthetic
 - Rubber duck debugging concept from software engineering culture
 - Icons and emojis for visual enhancement
 - Built with passion for quality and attention to detail
